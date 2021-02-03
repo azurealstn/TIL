@@ -26,7 +26,7 @@ let b=[1, 1, 2, 2, 3];
 console.log(solution(a, b));
 ```
 # 점수 계산
-1: 정답
+1: 정답  
 0: 오답
 
 ```javascript
