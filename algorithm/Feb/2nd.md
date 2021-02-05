@@ -233,3 +233,6 @@ function solution(arr){
 let arr=[130, 135, 148, 140, 145, 150, 150, 153];
 console.log(solution(arr));
 ```
+
+쉽지 않겠지만, 꾸준함이 정말 중요하다.
+포기하지 말자.
