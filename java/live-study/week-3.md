@@ -110,7 +110,7 @@ public class Main {
 
 ```
 
-### java 13 swtich 연산자
+### java 13 swtich 연산자 (yield)
 
 ```java
 package azurealstn;
@@ -119,9 +119,11 @@ public class Main {
     public static void main(String[] args) {
         int day = 1;
         String result = switch(day) {
-            case 1: System.out.println();
-            default: System.out.println();
-        }
+            case 1: 
+            	yield "1일";
+            default: 
+            	yield "몰라";
+        };
         System.out.println(result);
     }
 }
