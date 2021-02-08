@@ -81,24 +81,34 @@
 
 반대로 하위 버전에서 컴파일을 한 후 상위 버전에서 실행시키면 문제가 없다.
 
+## 바이트코드 확인하기
+
+![캡처](https://user-images.githubusercontent.com/55525868/107212574-7fd93e80-6a4a-11eb-956b-748ddaea1e59.PNG)
+
+javap -c Hello.class
+
 ## JIT 컴파일러란 무엇이며 어떻게 동작하는가
 위의 장점들로 자바는 매우 강력한 언어지만, 한 번의 컴파일링으로 실행 가능한 기계어가 만들어지지 않고 JVM에 의해 기계어로 번역되고 실행되는 단계를 하나 더 거쳐야하기 때문에 C나 C++ 같은 언어에 비해 상대적으로 실행 속도가 느리다는 단점을 가지고 있습니다.
 하지만 기계어로 빠르게 변환해주는 JVM 내부의 최적화된 JIT 컴파일러를 통해 속도의 격차는 많이 줄어들고 있습니다.
 
 ### JIT 컴파일러
-JIT 컴파일러(Just-In-Time Compiler)란 프로그램이 실행 중인 런타임에 실제 기계어로 변환해 주는 컴파일러를 의미한다.
+JIT 컴파일러(Just-In-Time Compiler)란 프로그램이 실행 중인 `런타임`에 실제 기계어로 변환해 주는 컴파일러를 의미한다.
+
+- JIT 컴파일러는 즉시 또는 시간에 맞추어 코드를 컴파일한다.
+- 성능을 개선하기 위해 JIT 컴파일러는 런타임에 적절한 바이트 코드 시퀀스를 기계어로 컴파일한다.
+
 동적 번역(dynamic translation)이라고도 불리는 이 기법은 프로그램의 실행 속도를 향상시키기 위해 개발되었다.
 즉, JIT 컴파일러는 자바 컴파일러가 생성한 자바 바이트코드를 런타임에 바로 기계어로 변환하는데 사용한다.
 
 ## JVM 구성 요소
 총 4가지
 
-1. 자바 인터프리터(Java Interpreter)
-2. 클래스 로더(class loader)
-3. JIT 컴파일러(Just-In-Time Compiler)
+1. 클래스 로더(class loader)
+2. Runtime Data Area
+3. Execution Engine
 4. 가비지 컬렉터(Garbage Collector)
 
-### 자바 인터프리터
+### 자바 인터프리터 (Execution Engine)
 자바 컴파일러에 의해 변환된 자바 바이트코드를 읽고 해석하는 역할을 하는 것이 자바 인터프리터(Java Interpreter)이다.
 
 ### 클래스 로더
@@ -108,6 +118,13 @@ JIT 컴파일러(Just-In-Time Compiler)란 프로그램이 실행 중인 런타�
 ### 가비지 컬렉터
 JVM은 가비지 컬렉터(Garbage Collector)를 이용하여 더는 사용하지 않는 메모리를 자동으로 회수해준다.
 따라서 개발자가 따로 메모리를 관리하지 않아도 되므로, 더욱 쉽게 프로그래밍에 집중할 수 있게 도와준다.
+
+자바 소스 파일을 컴파일하면 `.class`인 바이트코드가 생성되는데 이것들을 묶어서 Runtime Data Area에 적재하는 것이 바로 `클래스 로더`이다.
+`Runtime Data Area`는 JVM이 OS로부터 할당받은 메모리 영역인데, 크게 메서드 영역, 스택 영역, 힙 영역이 있다.
+
+- 메서드 영역: JVM이 읽어 들인 클래스, 인터페이스에 대한 런타임 상수 풀, 멤버 변수, 클래스 변수, 생성자와 메서드를 저장하는 공간
+- 스택 영역: 각 스레드마다 하나씩 존재, 스레드가 시작될 때 할당. 프리미티브 타입이 저장된다.
+- 힙 영역: JVM이 관리하는 프로그램 상에서 데이터를 저장하기 위해 런타임 시 동적으로 할당하여 사용하는 영역. New 연산자로 객체 또는 배열을 저장한다.
 
 ## JDK와 JRE의 차이
 쉽게 말해서
@@ -124,4 +141,5 @@ JVM은 가비지 컬렉터(Garbage Collector)를 이용하여 더는 사용하�
 ### reference
 http://tcpschool.com/java/java_intro_programming
 https://medium.com/@lazysoul/jvm-%EC%9D%B4%EB%9E%80-c142b01571f2
+https://hoonmaro.tistory.com/19
 책: 이것이 자바다
