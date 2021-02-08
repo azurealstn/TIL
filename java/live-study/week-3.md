@@ -82,3 +82,50 @@ public class Variable {
 길게 설명은 생략.
 
 - 이번 수업은 "자바에서는 이런 연산자들이 있구나" 하고 넘어가는 것이 좋을 것 같다. (너무 파고 들지 않아도 충분히 알 수 있는 내용들이다.)
+
+## (optional) Java 13. switch 연산자
+기존 switch문이 사라진 것이 아니라 switch 연산자라는 것이 추가가 되었다고 한다.
+
+### 기존 swtich문
+
+```java
+package azurealstn;
+
+public class Main {
+    public static void main(String[] args) {
+        int day = 1;
+        switch (day) {
+            case 1:
+                System.out.println("1일");
+                break;
+            case 2:
+                System.out.println("2일");
+                break;
+            default:
+                System.out.println("몰라");
+                break;
+        }
+    }
+}
+
+```
+
+### java 13 swtich 연산자
+
+```java
+package azurealstn;
+
+public class Main {
+    public static void main(String[] args) {
+        int day = 1;
+        String result = switch(day) {
+            case 1: System.out.println();
+            default: System.out.println();
+        }
+        System.out.println(result);
+    }
+}
+
+```
+
+이런 식으로 쓰는 것 같다... (Java 13을 쓰질 않아서 테스트는 넘어가겠다 ㅠ.ㅠ)
