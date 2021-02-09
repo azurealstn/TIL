@@ -108,7 +108,7 @@ JIT 컴파일러(Just-In-Time Compiler)란 프로그램이 실행 중인 `런타
 3. Execution Engine
 4. 가비지 컬렉터(Garbage Collector)
 
-### 자바 인터프리터 (Execution Engine)
+### Execution Engine (인터프리터, JIT 컴파일러가 있다.)
 자바 컴파일러에 의해 변환된 자바 바이트코드를 읽고 해석하는 역할을 하는 것이 자바 인터프리터(Java Interpreter)이다.
 
 ### 클래스 로더
