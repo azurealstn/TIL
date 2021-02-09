@@ -111,7 +111,8 @@ JIT 컴파일러(Just-In-Time Compiler)란 프로그램이 실행 중인 `런타
 ### Execution Engine (인터프리터, JIT 컴파일러가 있다.)
 자바 컴파일러에 의해 변환된 자바 바이트코드를 읽고 해석하는 역할을 하는 것이 자바 인터프리터(Java Interpreter)이다.
 
-Execution Engine은 `Class Loader`에 의해 메모리에 적재된 바이트코드들을 기계로 변경해 명령어를 실행시켜주는 엔진이다.
+Execution Engine은 `Class Loader`에 의해 메모리에 적재된 바이트코드들을 기계로 변경해 명령어를 실행시켜주는 엔진이다.  
+Execution Engine에는 `자바 인터프리터`와 `JIT 컴파일러`가 존재한다.
 
 ### 클래스 로더
 자바는 동적으로 클래스를 읽어오므로, 프로그램이 실행 중인 런타임에서야 모든 코드가 JVM과 연결된다.
