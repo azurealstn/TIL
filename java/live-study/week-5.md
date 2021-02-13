@@ -137,6 +137,9 @@ Car car = new Car("벤츠", "검정", 100);
 ## this 키워드 이해하기
 객체 자신을 `this`라고 하는데, this.model이라 함은 자신이 가지고 있는 model 필드라는 뜻이다. 예제를 보자. (주로 생성자와 메소드의 매개 변수 이름이 필드와 동일한 경우 사용한다.)
 
+> this 참조 변수는 인스턴스가 바로 **자기 자신**을 참조하는데 사용하는 변수이다.
+> 이러한 this 참조 변수는 해당 인스턴스의 주소를 가리키고 있다.
+
 ```java
 class Car {
 	String model;
@@ -148,3 +151,53 @@ class Car {
 
 this.model에서 model은 Car 클래스의 필드이다.  
 `=`뒤에 model은 생성자 매개변수인 model이다.
+이러한 `this`를 사용할 수 있는 영역은 인스턴스 메소드뿐이며, 클래스 메소드에서는 사용할 수 없다.
+
+```java
+package azurealstn;
+
+public class Car {
+    boolean door; //인스턴스 변수
+    void openDoor() { //인스턴스 메소드
+        door = true;
+    }
+    static void toggleDoor(boolean d) { //클래스 메소드
+    }
+}
+```
+
+- 인스턴스 메소드: `static` 키워드를 가지지 않는 메소드
+- 클래스 메소드: `static` 키워드를 가지는 메소드
+
+### this() 메소드
+`this()` 메소드는 생성자 내부에서만 사용할 수 있으며, 같은 클래스의 다른 생성자를 호출할 때 사용한다.
+
+```java
+package azurealstn;
+
+public class Car {
+    private String model;
+    private int maxSpeed;
+
+    Car(String model, int maxSpeed) {
+        this.model = model;
+        this.maxSpeed = maxSpeed;
+    }
+    Car() {
+        this("sonata", 100); //다른 생성자 호출
+    }
+
+    public String getModel() {
+        return this.model + "모델의 최고 스피드는 " + this.maxSpeed;
+    }
+}
+
+class CarMain {
+    public static void main(String[] args) {
+        Car car = new Car();
+        System.out.println(car.getModel());
+    }
+}
+```
+
+- 생성자 오버로딩이 많아질수록 중복코드가 많아지는데 `this()` 메소드를 사용하면 중복코드를 줄일 수 있다.
