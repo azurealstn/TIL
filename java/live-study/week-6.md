@@ -276,3 +276,5 @@ public class Poly {
 따라서 자바의 모든 클래스는 자동으로 Object 클래스를 상속받게 된다.
 
 - 자바의 모든 객체에서 `toString()`이나 `clone()`과 같은 메소드를 사용할 수 이유가 해당 메소드들이 Object 클래스의 메소드이기 때문이다.
+
+[참고 - http://www.tcpschool.com/java/intro]
