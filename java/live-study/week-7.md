@@ -19,15 +19,19 @@
 다음 예제는 자바에서 가장 많이 사용되는 패키지중 하나 `String 클래스`의 패키지 이름이다.
 
 ```java
-java.lang.String //java.lang 패키지에 속한 String 클래스
+java.lang.String //java.lang 패키지에 속한 String 클래스, FQCN
 ```
 
 ## 패키지 선언
 ```java
 package 패키지이름; //맨 상단에
+package com.azurealstn;
 ```
 
 자바의 모든 클래스는 기본적으로 패키지 하나 이상은 있는데 만약 패키지가 포함되어 있지 않으면, 이를 **이름 없는 패키지(unnamed package)**에 포함해 컴파일한다.
+
+> **FQCN(Fully Qualified Class Name)**: 패키지명과 클래스 이름을 모두 포함한 것을 말한다.
+> 예를 들면, `java.lang.String`, `com.azurealstn.HelloWorld` ...
 
 # import 키워드
 
