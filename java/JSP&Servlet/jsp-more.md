@@ -71,3 +71,19 @@
 또한 application 객체에서 `setAttribute()` & `getAttribute()` 메소드를 이용하여 값을 저장하고 가져올 수도 있다.
 - **out:** out 객체에서 `print()` 메소드를 이용해 `html` 코드를 작성해줄 수 있다.
 - **exception:** `getMessage()` 메소드를 이용해 에러 메시지를 출력한다.
+
+## Servlet 데이터 공유
+그렇다면 Servlet의 경우 데이터 공유를 어떻게 할까? 매우 유사하다.
+(web.xml 설정 코드는 동일하다.)
+
+```java
+//데이터 공유
+String adminId = getServletConfig().getInitParameter("adminId");
+
+//전체 데이터 공유
+String adminId = getServletContext().getInitParameter("adminId");
+
+//속성 저장 및 가져오기
+getServletContext().setAttribute("abc", "mart");
+String abc = getServletContext().getAttribute("abc");
+```
