@@ -124,6 +124,7 @@ public class MainClass {
 역시 쉽게 실행될리가 없지... 보아하니 뭔가 **class path resource**쪽 즉, 클래스 패스 경로가 좀 잘못된것 같다.. 그전에 버전을 바꿔보기도 하고 xml 파일을 다르게 수정해보기도 해봤지만 안됐다..
 
 ```java
+해결
 메인클래스에서 클래스패스 설정할때 한칸 공백을 두면 에러가 난다.
 "classpath: applicationContext.xml" -> "classpath:applicationContext.xml"
 ```
