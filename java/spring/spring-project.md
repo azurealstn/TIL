@@ -45,6 +45,9 @@
 </project>
 ```
 
+- `dependencies`: 나의 프로젝트에 필요한 모듈들을 관리(의존성 관리라고 한다.)
+- `build`: 나의 프로젝트가 빌드될 때 필요한 빌드 명령들이다.
+
 다음과 같이 작성하고 저장을 누르면 아래와 같은 에러 내용이 뜬다.
 
 ![캡처](https://user-images.githubusercontent.com/55525868/108701741-aff50700-754b-11eb-8335-3335a4da3442.PNG)
@@ -74,3 +77,53 @@
 
 이것이 스프링 프로젝트의 기본 구조이다.
 
+# applicationContext.xml
+스프링은 컨테이너 모든 객체를 모아놓는다고 했다. 스프링 컨테이너 즉, **IOC**라는 큰 그릇을 만들어 둔다.
+그 큰 그릇안에다가 객체를 만들어놓고 필요할 때마다 가져다 사용하게 되는데, 이 때 스프링에서는 객체를 **빈(Bean)**이라고 했으며, **이 빈을 만들어주는 녀석이 바로 applicationContext.xml 파일**이다. 그 이 파일에 의해 객체가 생성이 되는 것이다. 메모리에 로딩이 되는것인데, 특별하게 관리되는 곳, 스프링 컨테이너에 로딩이 되는 것이다.
+
+
+## applicationContext.xml 작성
+
+```
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean id="tWalk" class="testPjt.TranspotatoinWalk" /> <!-- 이 bean 태그로인해 객체가 자동으로 생성이 된다. (new 연산자 없이 사용 가능) -->
+</beans>
+```
+
+```java
+컨테이너안에 생성된 객체를 메인 클래스에서 사용.
+package testPjt;
+
+import org.springframework.context.support.GenericXmlApplicationContext;
+
+public class MainClass {
+
+	public static void main(String[] args) {
+//		TranspotatoinWalk transpotatoinWalk = new TranspotatoinWalk();
+//		transpotatoinWalk.move();
+		
+		GenericXmlApplicationContext ctx = new GenericXmlApplicationContext("classpath: applicationContext.xml"); //컨테이너
+		TranspotatoinWalk transpotatoinWalk = ctx.getBean("tWalk", TranspotatoinWalk.class); //빈의 아이디와 클래스타입을 가져온다.
+		transpotatoinWalk.move();
+		ctx.close(); //외부 리소스 사용시 반드시 반환해주어야함.
+	}
+}
+```
+
+> 요즘은 **xml** 파일이 아닌 **annotation**을 많이 이용한다. (훨씬 간편)
+> 모든 생성은 스프링 컨테이너가 담당하고 우리는 그것들을 가져다 쓰기만 하면 될 것이다.
+
+## 실행 에러 발생
+
+![캡처](https://user-images.githubusercontent.com/55525868/108708421-c784bd80-7554-11eb-83f7-b859113d3df9.PNG)
+
+역시 쉽게 실행될리가 없지... 보아하니 뭔가 **class path resource**쪽 즉, 클래스 패스 경로가 좀 잘못된것 같다.. 그전에 버전을 바꿔보기도 하고 xml 파일을 다르게 수정해보기도 해봤지만 안됐다..
+
+```java
+메인클래스에서 클래스패스 설정할때 한칸 공백을 두면 에러가 난다.
+"classpath: applicationContext.xml" -> "classpath:applicationContext.xml"
+```
