@@ -92,3 +92,19 @@ public String memLogin(Member member) {...}
 ```
 
 - Member 객체를 파라미터로 받으면 된다. 이 Member 객체는 DAO 객체 형태로 되어 있으며 이게 가능한 이유는 `getter`와 `setter`가 있기 때문에 값을 가져오고 지정까지 가능하다.
+
+## @ModelAttribute
+
+![캡처](https://user-images.githubusercontent.com/55525868/109013284-4bc27680-76f6-11eb-8069-0ec0786542a5.PNG)
+
+그림에서 보면 알 수 있듯이 `@ModelAttribute`를 사용하면 객체의 이름 변경할 수 있고, 이 변경된 이름으로 객체를 참조할 때 사용된다.
+만약 객체의 이름이 `memberLoginIsOk` 이러면 너무 길수가 있으니 줄일 수 있는 것이다.
+
+```java
+//mem 이라는 객체 이름으로 사용할 수 있다.
+public String memLogin(@ModelAttribute("mem") Member member) {...}
+```
+
+## Model과 ModelAndView의 차이
+
+![캡처](https://user-images.githubusercontent.com/55525868/109016429-8548b100-76f9-11eb-853e-b62f5ce3c870.PNG)
