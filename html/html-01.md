@@ -27,6 +27,7 @@ HTML은 `elements`로 구성되며 이 요소를 사용하기 위해 `tags`를 �
 
 > 이처럼 **장애가 있는 사람도 쉽게 웹에 접근할 수 있도록 반드시 웹 접근성을 고려해야 한다.** 웹은 일부 사람들의 독점이 아닌 모든 사람들이 공유할 수 있도록 해야한다.
 
-- ## references
+- ### references
 
 [Mozilla](https://developer.mozilla.org/)
+[html 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element#%EB%A9%94%EC%9D%B8_%EB%A3%A8%ED%8A%B8)
