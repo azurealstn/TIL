@@ -27,8 +27,31 @@ HTML은 `elements`로 구성되며 이 요소를 사용하기 위해 `tags`를 �
 
 > 이처럼 **장애가 있는 사람도 쉽게 웹에 접근할 수 있도록 반드시 웹 접근성을 고려해야 한다.** 웹은 일부 사람들의 독점이 아닌 모든 사람들이 공유할 수 있도록 해야한다.
 
+## viewport (반응형 웹을 위한)
+`viewport`란 웹페이지가 사용자에게 보여지는 영역을 말한다. 데스크탑은 브라우저의 크기를 줄이면 스크롤해서 봐야하는 경우가 있는데, 이 때도 브라우저에 보여지는 부분이 뷰포트이다. 즉, 데스크탑은 브라우저의 크기를 바꿔서 뷰포트의 크기를 바꿀 수 있는 것이다.
+
+**반면 스마트폰, 태블릿은 브라우저의 크기를 변경할 수 없기에 또 다양한 기기들이 있기에 그에 맞는 뷰포트 크기도 다양하다.**
+
+따라서 모바일 웹브라우저가 취하는 기본 정책이 화면을 줄여서 보여주는 것인데 이게 글자가 작아져 보기 어렵다는 단점이 있다.
+
+---
+
+**HTML 5에서는 `<meta>` 태그에서 viewport를 사용하면 모바일 기기에서 실제 렌더링되는 영역과 뷰포트의 크기를 조절할 수 있다. 또한 줌 레벨도 조정가능하다.**
+
+```html
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+```
+
+- `width=device-width` : 페이지의 너비를 기기의 스크린 너비로 설정. 즉, **렌더링 영역을 기기의 뷰포트 크기에 맞게 만들어준다.**
+- `initial-scale=1.0` : 처음 페이지 로딩시 확대/축소가 되지 않은 **원래 크기를 사용하도록 한다.** (0 ~ 10사이)
+- 줌 레벨
+	- minimum-scale=1.0 : 줄일 수 있는 최소 크기 지정  (0 ~ 10사이)
+	- maximum-scale=1.0 : 늘릴 수 있는 최대 크기 지정  (0 ~ 10사이)
+	- user-scalable=0 : yes 또는 no 값을 가지며 사용자가 화면을 확대/축소 할 수 있는지 지정
+
 - ### references
 
 [Mozilla](https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started)  
 [html 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element#%EB%A9%94%EC%9D%B8_%EB%A3%A8%ED%8A%B8)  
 [시맨틱 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element/article)  
+[viewport](https://offbyone.tistory.com/110)
