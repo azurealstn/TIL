@@ -29,6 +29,6 @@ HTML은 `elements`로 구성되며 이 요소를 사용하기 위해 `tags`를 �
 
 - ### references
 
-[Mozilla](https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started)
-[html 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element#%EB%A9%94%EC%9D%B8_%EB%A3%A8%ED%8A%B8)
-[시맨틱 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element/article)
+[Mozilla](https://developer.mozilla.org/ko/docs/Learn/HTML/Introduction_to_HTML/Getting_started)  
+[html 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element#%EB%A9%94%EC%9D%B8_%EB%A3%A8%ED%8A%B8)  
+[시맨틱 태그들](https://developer.mozilla.org/ko/docs/Web/HTML/Element/article)  
