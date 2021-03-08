@@ -33,7 +33,7 @@ HTML 문서에 스타일을 넣어주려면 다음 코드를 추가시켜주어�
 
 - `rel` : rel 속성은 현재 문서와 외부 리소스 사이의 연관 관계를 명시한다.
 
-## Box
+## box-sizing
 
 *Box를 보는 시야가 생기면 CSS 짜기가  수월해질 것이다.*
 
@@ -43,3 +43,4 @@ HTML 문서에 스타일을 넣어주려면 다음 코드를 추가시켜주어�
 
 - [Mozilla](https://developer.mozilla.org/ko/docs/Learn/Getting_started_with_the_web/CSS_basics)
 - [TCP school](http://tcpschool.com/html-tag-attrs/link-rel)
+- [드림코딩 by 엘리](https://www.youtube.com/watch?v=gGebK7lWnCk&list=PLv2d7VI9OotQ1F92Jp9Ce7ovHEsuRQB3Y&index=8)
