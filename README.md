@@ -56,7 +56,7 @@
 ## Spring (Eclipse)
 인프런 강의를 보며 정리한 개념입니다.
 
-- [Spring이란](인프런 강의를 보며 정리한 개념입니다.)
+- [Spring이란](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-intro.md)
 - [Spring 구조](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-project.md)
 - [Spring DI](https://github.com/azurealstn/TIL/blob/main/java/spring/DI.md)
 - [자동 주입](https://github.com/azurealstn/TIL/blob/main/java/spring/auto-injection.md)
