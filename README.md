@@ -35,8 +35,8 @@
 # [Back-End]
 
 ## Java
-백기선님의 [live-study](https://github.com/whiteship/live-study)를 통해 정리했다.  
-라이브로 참여하진 못했고, 정리도 너무 급하게해서 많이 부족하지만 "좋은 스터디란 이런것이구나" 하고 느꼈던 스터디였다. (선원들의 열정이 대단했다..)
+백기선님의 [live-study](https://github.com/whiteship/live-study)를 통해 정리했습니다.  
+라이브로 참여하진 못했고, 정리도 너무 급하게해서 많이 부족하지만 "좋은 스터디란 이런것이구나" 하고 느꼈던 스터디였습니다. (선원들의 열정이 대단했다..)
 
 - [1주차. JVM이란](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-1.md)
 - [2주차. 데이터 타입](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-2.md)
