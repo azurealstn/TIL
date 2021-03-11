@@ -14,6 +14,10 @@
 ## CSS
 
 - [CSS 개념](https://github.com/azurealstn/TIL/blob/main/css/css-01.md)
+
+## Publishing
+
+- [간단한 유튜브 정적 페이지](https://github.com/azurealstn/youtube-publishing)
   
 <br/>
 <br/>
