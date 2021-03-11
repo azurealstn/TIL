@@ -18,7 +18,13 @@
 ## Publishing
 
 - [간단한 유튜브 정적 페이지](https://github.com/azurealstn/youtube-publishing)
-  
+
+## Javascript
+유튜버 드림코딩 by 엘리님의 강의를 통하여 정리한 글들입니다. 이미 블로그에도 정리를 해놓았지만 다시한번 차근차근히 공부하려고 올립니다.
+참고 - [강의](https://www.youtube.com/watch?v=wcsVjmHrUQg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2)
+
+- [Javascript의 역사 & async - defer의 차이](https://github.com/azurealstn/TIL/blob/main/javascript/history%26async-defer.md)
+
 <br/>
 <br/>
 <br/>
