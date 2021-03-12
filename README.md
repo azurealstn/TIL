@@ -24,7 +24,7 @@
 ### 참고 URL - [자바스크립트 기초 강의(ES5+)](https://www.youtube.com/watch?v=wcsVjmHrUQg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2)
 
 - [Javascript의 역사 & async - defer의 차이](https://github.com/azurealstn/TIL/blob/main/javascript/history%26async-defer.md)
-- [var와 let의 차이](https://github.com/azurealstn/TIL/blob/main/javascript/varVSlet.md)
+- [var말고 let!](https://github.com/azurealstn/TIL/blob/main/javascript/varVSlet.md)
 
 <br/>
 <br/>
