@@ -25,7 +25,7 @@
 # async vs defer
 *브라우저 코드는 한줄 한줄씩 읽어나간다.*
 
-보통 <script>는 <head>에 넣지 않고, <body>  **끝부분에 넣는다.**
+보통 <script>는 \<head>에 넣지 않고, <body>  **끝부분에 넣는다.**
 
 ```html
 <head>
