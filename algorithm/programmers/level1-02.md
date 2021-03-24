@@ -48,6 +48,40 @@ console.log(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1
 - 만약 result에 가장 위에 있는 인형과 방금 집어넣은 인형이 같으면 pop()을 해주고 answer에 +2를 해준다.
 - 그렇지 않으면 result에 push() 해준다.
 
+## 다른 방식
+
+```javascript
+'use strict';
+
+function solution(board, moves) {
+    let answer = 0;
+    let result = []; //바구니
+    //board 2차원 배열 모든 탐색
+    for (let i = 0; i < moves.length; i++) {
+        for (let j = 0; j < board.length; j++) {
+            //뽑으려는 인형이 0이 아니고 중복 선택 막기
+            if (board[j][moves[i] - 1] !== 0) {
+                //두 개의 인형이 같으면 pop() 해주고, answer에 +2를 해준다.
+                //아니면 push()를 해준다.
+                if (result[result.length - 1] === board[j][moves[i] - 1]) {
+                    result.pop();
+                    answer += 2;
+                } else {
+                    result.push(board[j][moves[i] - 1]);
+                }
+                board[j][moves[i] - 1] = 0;
+                break;
+            }
+        }
+    }
+    return answer;
+  }
+console.log(solution([[0,0,0,0,0],[0,0,1,0,3],[0,2,5,0,1],[4,2,4,4,2],[3,5,1,3,1]], [1,5,3,5,1,2,1,4]));
+```
+
+- 위와 비슷한 코드이지만 `removeSame`이라는 변수를 사용하지 않고 구현했다.
+- 솔직히 removeSame이 조금 헷갈렸는데 `break문`을 사용하여 반복문을 빠져나오게 할수도 있었다. 
+
 #### 시간 복잡도
 
 - O(n^2)
