@@ -1,6 +1,6 @@
 # 3진법 뒤집기
 
-- [문제 보기](https://programmers.co.kr/learn/courses/30/lessons/12901?language=javascript)
+- [문제 보기](https://programmers.co.kr/learn/courses/30/lessons/68935?language=javascript)
 
 ## 문제 요약
 
