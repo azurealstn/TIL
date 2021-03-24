@@ -152,7 +152,7 @@ print();
 
 ## function hoisting
 
-- 앞서 우리는 var hoisting을 알아봤다. var 변수를 선언과 동시에 가장 위로 끌어올리는 것을 의미하는데, 이 function도 선언과 동시에 끌어올리는 것이 가능하다.
+- 앞서 우리는 var hoisting을 알아봤다. var 변수를 선언과 동시에 가장 위로 끌어올리는 것을 의미하는데, 이 function도 선언과 동시에 끌어올린다.
 
 ```javascript
 //function hoisting(함수 호이스팅)
