@@ -6,3 +6,4 @@
 - [두 개 뽑아서 더하기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1-01.md)
 - [크레인 인형뽑기 게임](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1-02.md)
 - [완주하지 못한 선수](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1-03.md)
+- [신규아이디 추천](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1-04.md)
