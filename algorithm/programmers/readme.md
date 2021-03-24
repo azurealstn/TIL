@@ -11,3 +11,4 @@
 - [K번째수](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-06.md)
 - [체육복](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-07.md)
 - [2016년](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-08.md)
+- [3진법 뒤집기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-09.md)
