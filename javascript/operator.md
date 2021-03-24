@@ -62,7 +62,7 @@ for (let i = 0; i < 11; i++) {
   console.log(i);
 }
 
-//0부터 10까지 8을 제외하여 출력(break 이용할 것)
+//0부터 10까지 8이 나오면 그  출력(break 이용할 것)
 for (let i = 0; i < 11; i++) {
   if (i === 8) break;
   console.log(i);
