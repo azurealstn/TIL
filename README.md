@@ -23,10 +23,11 @@
 유튜버 드림코딩 by 엘리님의 강의를 통하여 정리한 글들입니다. 이미 블로그에도 정리를 해놓았지만 다시한번 차근차근히 공부하려고 올립니다.  
 ### 참고 URL - [자바스크립트 기초 강의(ES5+)](https://www.youtube.com/watch?v=wcsVjmHrUQg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2)
 
-- [Javascript의 역사 & async - defer의 차이](https://github.com/azurealstn/TIL/blob/main/javascript/history%26async-defer.md)
-- [var말고 let!](https://github.com/azurealstn/TIL/blob/main/javascript/varVSlet.md)
-- [Operator](https://github.com/azurealstn/TIL/blob/main/javascript/operator.md)
-- [Function](https://github.com/azurealstn/TIL/blob/main/javascript/function.md)
+- [Javascript의 역사 & async - defer의 차이](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/history%26async-defer.md)
+- [var말고 let!](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/varVSlet.md)
+- [Operator](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/operator.md)
+- [Function](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/function.md)
+- [Class](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/class.md)
 
 <br/>
 <br/>
