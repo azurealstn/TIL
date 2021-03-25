@@ -174,3 +174,7 @@ const students = [
 - `every()` : some()과는 다르게 모든 학생들을 검사하여 한명이라도 조건에 맞지않으면 false를 리턴한다.
 - `reduce()` : 배열에 있는 값을 누적할 때 사용.
 - `sort()` : 오름차순 또는 내림차순으로 정렬할 때 사용.
+
+### 출제 링크
+
+[위 예제에서 문제 보기](https://www.youtube.com/watch?v=3CUjtKJ7PJg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2&index=9)
