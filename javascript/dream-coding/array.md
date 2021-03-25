@@ -70,12 +70,107 @@ console.log(arr2.includes(-1)); //false
 //lastIndexOf
 arr2.push(2);
 console.log(arr2.lastIndexOf(2)); //4, 2요소의 맨 마지막 Index를 출력
+
+//join
+{
+  const fruits = ['apple', 'banana', 'orange'];
+  const fruit = fruits.join(',');
+  console.log(fruit); //apple,banana,orange
+}
+
+//split
+{
+  const fruits = '🍎, 🥝, 🍌, 🍒';
+  const fruit = fruits.split(',');
+  console.log(fruit); //["🍎", " 🥝", " 🍌", " 🍒"]
+}
+
+//reverse
+{
+  const array = [1, 2, 3, 4, 5];
+  const re = array.reverse();
+  console.log(re); //[5, 4, 3, 2, 1]
+}
+
+//slice
+{
+  const array = [1, 2, 3, 4, 5];
+  const newArr = array.slice(2, 5);
+  console.log(newArr); //[3, 4, 5]
+}
+
+class Student {
+  constructor(name, age, enrolled, score) {
+    this.name = name;
+    this.age = age;
+    this.enrolled = enrolled;
+    this.score = score;
+  }
+}
+const students = [
+  new Student('A', 29, true, 45),
+  new Student('B', 28, false, 80),
+  new Student('C', 30, true, 90),
+  new Student('D', 40, false, 66),
+  new Student('E', 18, true, 88),
+];
+
+//find
+{
+  const good = students.find(v => v.score === 90);
+  console.log(good); //Student {name: "C", age: 30, enrolled: true, score: 90}
+}
+
+//filter
+{
+  const enroll = students.filter(v => v.enrolled === true);
+  console.log(enroll); //[Student, Student, Student]
+}
+
+//map
+{
+  const score = students.map(v => v.score);
+  console.log(score); //[45, 80, 90, 66, 88]
+}
+
+//some
+{
+  const score50 = students.some(v => v.score < 50);
+  console.log(score50); //true
+  const score51 = students.every(v => v.score < 50);
+  console.log(score51); //false
+}
+
+//reduce
+{
+  const result = students.reduce((acc, cur) => acc + cur.score, 0);
+  console.log(result); //sum
+  console.log(result / students.length); //average
+}
+
+//sort
+{
+  const score = students.map(v => v.score);
+  const sorted = score.sort((a, b) => a - b);
+  console.log(sorted.join(', ')); //45, 66, 80, 88, 90
+}
 ```
 
 - 여기서 중요한 점은 `push`나 `pop`보다 `unshift`나 `shift`가 훨 느리다. 그래서 `push`, `pop`을 쓰는 것이 좋다.
 - 그 이유는 `push`나 `pop`은 기존 데이터에서 맨 뒤에 삽입하거나 삭제하기에 기존 데이터는 가만히 있고 쉽게 삽입하거나 삭제가 가능하다. 하지만 `unshift`나 `shift`는 앞에다 삽입이나  삭제하기 때문에 기존에 있던 데이터들을 오른쪽으로 한칸씩 이동시켜야 하기 때문에 배열의 길이가 길수록 더 느리게 작동할 것이다.
 - `splice()`에서 첫번째 파라미터는 `Index`부터 두번째 파라미터는 몇개를 지울 건지, 그 뒤부터는 `push`가 될 요소들이다.
-- `concat()`은 두 배열을 합치는 함수이다.
-- `indexOf()`는 배열의 요소를 파라미터로 받아서 그 요소의 `Index`를 출력
-- `includes()`는 배열의 요소를 파라미터로 받아서 있으면 `true`, 없으면 `false`를 출력
-- `lastIndexOf()`는 배열의 요소를 파라미터로 받아서 그 요소의 마지막 `Index`를 출력
+- `concat()` : 두 배열을 합치는 함수이다.
+- `indexOf()` : 배열의 요소를 파라미터로 받아서 그 요소의 `Index`를 출력
+- `includes()`: 배열의 요소를 파라미터로 받아서 있으면 `true`, 없으면 `false`를 출력
+- `lastIndexOf()` : 배열의 요소를 파라미터로 받아서 그 요소의 마지막 `Index`를 출력
+- `join()` : array를 string으로 변환
+- `split()` : a string into substrings, 구분자를 꼭 전달해주어야 한다.
+- `reverse()` : 배열 자체를 reverse 시킨다.
+- `slice()` : 원하는 구간을 파라미터로 받아서 리턴한다.
+- `find()` : 콜백함수를 파라미터로 받아서 학생을 한명한명 확인하면서 score가 90점인 학생을 찾는다.
+- `filter()` : 말 그대로 필터링할 때 사용한다. 조건에 맞는 학생을 필터링해서 새로운 배열을 리턴한다.
+- `map()` : 콜백함수를 호출하면서 함수에 의해 연산되어 매핑되어 새로운 배열이 생성된다.
+- `some()` : Determines whether the specified callback function returns true for any element of an array.
+- `every()` : some()과는 다르게 모든 학생들을 검사하여 한명이라도 조건에 맞지않으면 false를 리턴한다.
+- `reduce()` : 배열에 있는 값을 누적할 때 사용.
+- `sort()` : 오름차순 또는 내림차순으로 정렬할 때 사용.
