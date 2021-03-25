@@ -13,3 +13,8 @@
 - [2016년](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-08.md)
 - [3진법 뒤집기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-09.md)
 - [가운데 글자 가져오기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-10.md)
+- [같은 숫자는 싫어](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-11.md)
+- [나누어 떨어지는 숫자 배열](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-12.md)
+- [두 정수 사이의 합](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-13.md)
+- [문자열 내 마음대로 정렬하기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-14.md)
+- [폰켓몬](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-15.md)
