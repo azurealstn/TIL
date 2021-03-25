@@ -18,3 +18,4 @@
 - [두 정수 사이의 합](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-13.md)
 - [문자열 내 마음대로 정렬하기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-14.md)
 - [폰켓몬](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-15.md)
+- [문자열 내 p와 y의 개수](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-16.md)
