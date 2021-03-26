@@ -26,4 +26,4 @@
 - [수박수박수박수박수박수?](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-21.md)
 - [문자열을 정수로 바꾸기](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-22.md)
 - [시저 암호](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-23.md)
-- [문자열 내 p와 y의 개수](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-24.md)
+- [내적](https://github.com/azurealstn/TIL/blob/main/algorithm/programmers/level1/level1-24.md)
