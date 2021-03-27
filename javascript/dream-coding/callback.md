@@ -53,8 +53,8 @@ class UserStorage {
   loginUser(id, password, onSuccess, onError) {
     setTimeout(() => {
       if (
-        (id === 'minsu' && password === 1234) ||
-        (id === 'coder' && password === 5678)
+        (id === 'minsu' && password === '1234') ||
+        (id === 'coder' && password === '5678')
       ) {
         onSuccess(id); //성공
       } else {
@@ -94,3 +94,7 @@ userStorage.loginUser(id, password, user => {
 ```
 
 - 이것이 콜백 지옥이다. 콜백함수로 계속 쓰게 되면 가독성이 너무 떨어져서 정말 알아보기가 힘들다. 당연히 유지보수하기에도 어려울 것이다.
+
+### 콜백 지옥 해결 (Promise)
+
+[코드 보기](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/resolveCallback.md)
