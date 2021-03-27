@@ -1,7 +1,7 @@
 ```javascript
 'use strict';
 
-//콜백 지옥
+//
 class UserStorage {
   //로그인 정보
   loginUser(id, password) {
