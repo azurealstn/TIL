@@ -34,6 +34,7 @@
 - [Callback](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/callback.md)
 - [Promise](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/promise.md)
 - [async&await](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/async&await.md)
+- [프로젝트 보기](https://github.com/azurealstn/miniShop)
 
 <br/>
 <br/>
