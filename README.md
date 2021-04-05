@@ -64,7 +64,7 @@
 - [13주차. 자바 I/O](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-13.md)
 
 ## JSP & Servlet (Eclipse)
-인프런 강의를 보며 정리한 개념입니다.
+인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-jsp_renew#)
 
 - [환경설정](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [JSP&Servlet](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/jsp%26servlet.md)
@@ -75,7 +75,7 @@
 - [커넥션 풀](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/connection-pool.md)
 
 ## Spring (Eclipse)
-인프런 강의를 보며 정리한 개념입니다.
+인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew#)
 
 - [Spring이란](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-intro.md)
 - [Spring 구조](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-project.md)
