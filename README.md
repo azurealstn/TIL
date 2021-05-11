@@ -86,3 +86,9 @@
 - [Service&Controller&DAO](https://github.com/azurealstn/TIL/blob/main/java/spring/service-dao-controller.md)
 - [리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/spring/redirect.md)
 - [스프링 세션과쿠키](https://github.com/azurealstn/TIL/blob/main/java/spring/cookie-session.md)
+
+## 스프링의 기본 개념
+앞으로 만들 블로그 프로젝트를 위해 스프링에 대한 기본 개념들을 정리하였습니다. [링크](https://www.youtube.com/watch?v=XBG6CUtVCIg&list=PL93mKxaRDidG_OIfRQ4nztPQ13y74lCYg)
+유튜브 데어 프로그래밍님의 강의를 보며 만들 예정입니다.
+  
+- [스프링_기본_개념](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90)
