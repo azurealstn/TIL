@@ -1,5 +1,5 @@
 # 제가 지금까지 공부해온 내용들을 정리하기 위해 만든 저장소입니다!
-기초 지식중에서 제 나름대로(?) 중요하다고 생각한 개념들을 정리했습니다.
+웹에 대한  기초 개념들을 정리했습니다.
 
 <br/>
 <br/>
@@ -91,4 +91,4 @@
 앞으로 만들 블로그 프로젝트를 위해 스프링에 대한 기본 개념들을 정리하였습니다. [링크](https://www.youtube.com/watch?v=XBG6CUtVCIg&list=PL93mKxaRDidG_OIfRQ4nztPQ13y74lCYg)  
 유튜브 데어 프로그래밍님의 강의를 보며 만들 예정입니다.
 
-- [스프링_기본_개념](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90)
+- [스프링_기본_개념](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90.md)
