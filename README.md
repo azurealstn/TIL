@@ -105,3 +105,6 @@
 - [Statement VS PreparedStatement](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/PreparedStatement.md)
 - [서블릿 초기화 매개변수](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/%EC%84%9C%EB%B8%94%EB%A6%BF_%EC%B4%88%EA%B8%B0%ED%99%94_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98.md)
 - [FQCN 또는 QName](https://github.com/azurealstn/TIL/blob/main/java/javaProgramming/FQCNorQName.md)
+- [Get 방식과 Post 방식](https://azurealstn.tistory.com/78)
+- [서블릿인가](https://azurealstn.tistory.com/79)
+- [웹 프로젝트 폴더 구조](https://azurealstn.tistory.com/81)
