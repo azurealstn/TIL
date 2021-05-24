@@ -73,6 +73,9 @@
 - [Cookie&Session](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/cookie%26session.md)
 - [JDBC&DAO&DTO](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/JDBC%26DAO%26DTO.md)
 - [커넥션 풀](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/connection-pool.md)
+- [한글 깨짐](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/hangul.md)
+- [리프레시와 리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/refresh%26redirect.md)
+- [Statement VS PreparedStatement](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/PreparedStatement.md)
 
 ## Spring (Eclipse)
 인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew#)
