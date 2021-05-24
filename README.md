@@ -21,7 +21,7 @@
 
 ## 나만의 Portfolio
 
-- [HTML, CSS, JS로 포트폴리오 만기](https://github.com/azurealstn/my-portfolio)
+- [HTML, CSS, JS로 포트폴리오 만들기](https://github.com/azurealstn/my-portfolio)
 
 ## Javascript
 유튜버 드림코딩 by 엘리님의 강의를 통하여 정리한 글들입니다. 이미 블로그에도 정리를 해놓았지만 다시한번 차근차근히 공부하려고 올립니다.  
