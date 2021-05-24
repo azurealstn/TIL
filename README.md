@@ -73,9 +73,6 @@
 - [Cookie&Session](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/cookie%26session.md)
 - [JDBC&DAO&DTO](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/JDBC%26DAO%26DTO.md)
 - [커넥션 풀](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/connection-pool.md)
-- [한글 깨짐](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/hangul.md)
-- [리프레시와 리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/refresh%26redirect.md)
-- [Statement VS PreparedStatement](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/PreparedStatement.md)
 
 ## Spring (Eclipse)
 인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew#)
@@ -95,3 +92,11 @@
 유튜브 데어 프로그래밍님의 강의를 보며 만들 예정입니다.
 
 - [스프링_기본_개념](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90.md)
+
+## JSP/Servlet과 Spring Framework
+엄진영님의 책인 자바 웹 개발 워크북을 공부하며 정리한 개념입니다.
+
+- [한글 깨짐](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/hangul.md)
+- [리프레시와 리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/refresh%26redirect.md)
+- [Statement VS PreparedStatement](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/PreparedStatement.md)
+- [서블릿 초기화 매개변수](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/%EC%84%9C%EB%B8%94%EB%A6%BF_%EC%B4%88%EA%B8%B0%ED%99%94_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98.md)
