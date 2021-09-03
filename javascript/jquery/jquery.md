@@ -75,3 +75,25 @@ $(document).on('click', function() {
 
 ## References
 
+
+'use strict';
+
+$('#myTask').children().click(function() {
+    $('#myTask').append('<li> New li tag </li>');
+    $(this).remove();
+});
+
+//각각 차이점
+// $(document).ready(function() {} 안에 있을 때와 없을 때 차이점
+// 위 두 가지 정리할 것!
+// $(document).on('click','#listBtn', function() {
+	
+// });
+
+// $('#listBtn').on('click', function() {
+    
+// });
+
+// $('#listBtn2').click(function() {
+    
+// });
