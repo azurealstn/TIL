@@ -164,14 +164,14 @@ $(document).ready(function() {
 
 ## 결론
 
-- **.click()** 보다는 **.on('click')**을 더 많이 사용할 것! (Vanilla Javascript 에서는 addEventListener를 사용.)
+- **\.click()** 보다는 **\.on('click')**을 더 많이 사용할 것! (Vanilla Javascript 에서는 addEventListener를 사용.)
 - **$(document).ready** 말고 다른 방법이 있다면 **defer** 사용하는 것도 하나의 방법인 것 같습니다. (defer은 Vanilla JS에서 사용.)
 
 ```html
 <script src="main.js" defer></script>
 ```
 
-- **$(document).on('click', '#id')**과 **$('#id').on('click')**의 차이는 document로 먼저 접근해서 해당 id를 적용시키느냐 아니면 해당하는 **id에만** 적용시키느냐 차이입니다. (예제를 직접 만들어보세요!!)
+- **\$(document).on('click', '#id')**과 **\$('#id').on('click')**의 차이는 document로 먼저 접근해서 해당 id를 적용시키느냐 아니면 해당하는 **id에만** 적용시키느냐 차이입니다. (예제를 직접 만들어보세요!!)
 
 <br/>
 <br/>
