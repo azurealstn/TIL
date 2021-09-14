@@ -43,7 +43,7 @@
             <td>마우스가 해당 요소에 범위 내에서 움직이면 이벤트 발생</td>
         </tr>
         <tr>
-            <td>mouseup/td>
+            <td>mouseup</td>
             <td>마우스를 클릭하고 뗄 때 이벤트 발생</td>
         </tr>
     </tbody>
