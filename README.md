@@ -109,3 +109,21 @@
 - [서블릿인가](https://azurealstn.tistory.com/79)
 - [웹 프로젝트 폴더 구조](https://azurealstn.tistory.com/81)
 - [웹 MVC 아키텍처](https://azurealstn.tistory.com/80)
+
+<br/>
+<br/>
+<br/> 
+<br/>
+<br/>
+<br/>
+
+# [Algorithm]
+알고리즘 공부하면서 기록한 코드를 저장해놓은 폴더입니다.  
+주로 인프런 강의를 보며 공부를 진행하고 있으며, 한번 루프를 돌면 다시 한번 스스로 풀어보려고 합니다.  
+(아직 많이 모릅니다 ㅜ.ㅜ)
+
+설명이 없고 코드만 기록해놓기 때문에 다른 사람이 참고해서 보기는 힘들 것 같네요ㅎ..  
+(그냥 개인적인 기록장 같은 것..!)
+
+- [알고리즘 - 인프런 강의](https://github.com/azurealstn/TIL/tree/main/algorithm/inflearn-coding-test)
+- [알고리즘 - 프로그래머스](https://github.com/azurealstn/TIL/tree/main/algorithm/programmers)
