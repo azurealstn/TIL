@@ -67,6 +67,10 @@
 - [12주차. 어노테이션](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-12.md)
 - [13주차. 자바 I/O](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-13.md)
 
+### [public static void main(String[] args)의미
+
+- [public static void main(String[] args)](https://github.com/azurealstn/TIL/blob/main/java/javaProgramming/public_static_void_main.md)
+
 ## JSP & Servlet (Eclipse)
 인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-jsp_renew#)
 
