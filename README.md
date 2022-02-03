@@ -67,7 +67,7 @@
 - [12주차. 어노테이션](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-12.md)
 - [13주차. 자바 I/O](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-13.md)
 
-### [public static void main(String[] args)의미
+### public static void main(String[] args) 의미
 
 - [public static void main(String[] args)](https://github.com/azurealstn/TIL/blob/main/java/javaProgramming/public_static_void_main.md)
 
