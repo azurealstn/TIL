@@ -1,11 +1,6 @@
-# 제가 지금까지 공부해온 내용들을 정리하기 위해 만든 저장소입니다!
-웹에 대한 기초 개념들을 정리했습니다. (백엔드 위주)
+# TIL (Today I Learned)
 
 <br/>
-<br/>
-<br/>
-
-# [Front-End]  
   
 ## HTML
 
@@ -18,14 +13,9 @@
 ## Publishing
 
 - [간단한 유튜브 정적 페이지](https://github.com/azurealstn/youtube-publishing)
-
-## 나만의 Portfolio
-
 - [HTML, CSS, JS로 포트폴리오 만들기](https://github.com/azurealstn/my-portfolio)
 
 ## Javascript
-유튜버 드림코딩 by 엘리님의 강의를 통하여 정리한 글들입니다. 이미 블로그에도 정리를 해놓았지만 다시한번 차근차근히 공부하려고 올립니다.  
-### 참고 URL - [자바스크립트 기초 강의(ES5+)](https://www.youtube.com/watch?v=wcsVjmHrUQg&list=PLv2d7VI9OotTVOL4QmPfvJWPJvkmv6h-2)
 
 - [Javascript의 역사 & async - defer의 차이](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/history%26async-defer.md)
 - [var말고 let!](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/varVSlet.md)
@@ -40,18 +30,7 @@
 - [async&await](https://github.com/azurealstn/TIL/blob/main/javascript/dream-coding/async&await.md)
 - [json을 이용한 간단한 미니프로젝트](https://github.com/azurealstn/miniShop)
 
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-<br/>
-
-# [Back-End]
-
 ## Java
-백기선님의 [live-study](https://github.com/whiteship/live-study)를 통해 정리했습니다.  
-라이브로 참여하진 못했고, 정리도 너무 급하게해서 많이 부족하지만 "좋은 스터디란 이런것이구나" 하고 느꼈던 스터디였습니다. (선원들의 열정이 대단했다..)
 
 - [1주차. JVM이란](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-1.md)
 - [2주차. 데이터 타입](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-2.md)
@@ -66,13 +45,12 @@
 - [11주차. 열거형](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-11.md)
 - [12주차. 어노테이션](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-12.md)
 - [13주차. 자바 I/O](https://github.com/azurealstn/TIL/blob/main/java/live-study/week-13.md)
-
-### public static void main(String[] args) 의미
-
+- [14주차. 제네릭](https://azurealstn.tistory.com/111?category=972027)
+- [15주차. 람다식](https://azurealstn.tistory.com/112?category=972027)
 - [public static void main(String[] args)](https://github.com/azurealstn/TIL/blob/main/java/javaProgramming/public_static_void_main.md)
+- [FQCN 또는 QName](https://github.com/azurealstn/TIL/blob/main/java/javaProgramming/FQCNorQName.md)
 
-## JSP & Servlet (Eclipse)
-인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8B%A4%EC%A0%84-jsp_renew#)
+## JSP & Servlet
 
 - [환경설정](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95.md)
 - [JSP&Servlet](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/jsp%26servlet.md)
@@ -81,9 +59,13 @@
 - [Cookie&Session](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/cookie%26session.md)
 - [JDBC&DAO&DTO](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/JDBC%26DAO%26DTO.md)
 - [커넥션 풀](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/connection-pool.md)
+- [서블릿요약](https://azurealstn.tistory.com/79)
+- [한글 깨짐](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/hangul.md)
+- [리프레시와 리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/refresh%26redirect.md)
+- [Statement VS PreparedStatement](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/PreparedStatement.md)
+- [서블릿 초기화 매개변수](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/%EC%84%9C%EB%B8%94%EB%A6%BF_%EC%B4%88%EA%B8%B0%ED%99%94_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98.md)
 
-## Spring (Eclipse)
-인프런 강의를 보며 정리한 개념입니다. [링크](https://www.inflearn.com/course/%EC%8A%A4%ED%94%84%EB%A7%81-%ED%94%84%EB%A0%88%EC%9E%84%EC%9B%8C%ED%81%AC_renew#)
+## Spring
 
 - [Spring이란](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-intro.md)
 - [Spring 구조](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-project.md)
@@ -94,33 +76,20 @@
 - [Service&Controller&DAO](https://github.com/azurealstn/TIL/blob/main/java/spring/service-dao-controller.md)
 - [리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/spring/redirect.md)
 - [스프링 세션과쿠키](https://github.com/azurealstn/TIL/blob/main/java/spring/cookie-session.md)
-
-## 스프링의 기본 개념
-앞으로 만들 블로그 프로젝트를 위해 스프링에 대한 기본 개념들을 정리하였습니다. [링크](https://www.youtube.com/watch?v=XBG6CUtVCIg&list=PL93mKxaRDidG_OIfRQ4nztPQ13y74lCYg)  
-유튜브 데어 프로그래밍님의 강의를 보며 만들 예정입니다.
-
 - [스프링_기본_개념](https://github.com/azurealstn/TIL/blob/main/java/spring/spring-%EA%B8%B0%EB%B3%B8-%EA%B0%9C%EB%85%90.md)
-
-## JSP/Servlet과 Spring Framework
-엄진영님의 책인 자바 웹 개발 워크북을 공부하며 정리한 개념입니다.
-
-- [한글 깨짐](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/hangul.md)
-- [리프레시와 리다이렉트](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/refresh%26redirect.md)
-- [Statement VS PreparedStatement](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/PreparedStatement.md)
-- [서블릿 초기화 매개변수](https://github.com/azurealstn/TIL/blob/main/java/JSP%26Servlet/%EC%84%9C%EB%B8%94%EB%A6%BF_%EC%B4%88%EA%B8%B0%ED%99%94_%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98.md)
-- [FQCN 또는 QName](https://github.com/azurealstn/TIL/blob/main/java/javaProgramming/FQCNorQName.md)
-- [Get 방식과 Post 방식](https://azurealstn.tistory.com/78)
-- [서블릿인가](https://azurealstn.tistory.com/79)
 - [웹 프로젝트 폴더 구조](https://azurealstn.tistory.com/81)
 - [웹 MVC 아키텍처](https://azurealstn.tistory.com/80)
 
-# [Algorithm]
-알고리즘 공부하면서 기록한 코드를 저장해놓은 폴더입니다.  
-주로 인프런 강의를 보며 공부를 진행하고 있으며, 한번 루프를 돌면 다시 한번 스스로 풀어보려고 합니다.  
-(아직 많이 모릅니다 ㅜ.ㅜ)
+## 네트워크
 
-설명이 없고 코드만 기록해놓기 때문에 다른 사람이 참고해서 보기는 힘들 것 같네요ㅎ..  
-(그냥 개인적인 기록장 같은 것..!)
+- [Get 방식과 Post 방식](https://azurealstn.tistory.com/78)
+- [모든 개발자를 위한 HTTP 웹 기본 지식](https://stirring-zone-39a.notion.site/HTTP-4409d541f5c340179ae0ef1bed9b2b7c)
+
+## Algorithm
 
 - [알고리즘 - 인프런 강의](https://github.com/azurealstn/TIL/tree/main/algorithm/inflearn-coding-test)
 - [알고리즘 - 프로그래머스](https://github.com/azurealstn/TIL/tree/main/algorithm/programmers)
+
+## Git&GitHub
+
+- [제대로 파는 Git & GitHub - by 얄코](https://stirring-zone-39a.notion.site/Git-GitHub-by-65e17ec772a245e2a4ac0fef980f958d)
