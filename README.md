@@ -92,4 +92,4 @@
 
 ## Git&GitHub
 
-- [제대로 파는 Git & GitHub - by 얄코](https://stirring-zone-39a.notion.site/Git-GitHub-by-65e17ec772a245e2a4ac0fef980f958d)
+- [제대로 파는 Git & GitHub - by 얄코](https://github.com/azurealstn/TIL/tree/main/git-flow/inflearn-coding-test)
