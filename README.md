@@ -83,7 +83,7 @@
 ## 네트워크
 
 - [Get 방식과 Post 방식](https://azurealstn.tistory.com/78)
-- [모든 개발자를 위한 HTTP 웹 기본 지식](https://stirring-zone-39a.notion.site/HTTP-4409d541f5c340179ae0ef1bed9b2b7c)
+- [모든 개발자를 위한 HTTP 웹 기본 지식](https://github.com/azurealstn/TIL/blob/main/network/%EB%AA%A8%EB%93%A0_%EA%B0%9C%EB%B0%9C%EC%9E%90%EB%A5%BC_%EC%9C%84%ED%95%9C_HTTP_%EC%9B%B9_%EA%B8%B0%EB%B3%B8%EC%A7%80%EC%8B%9D.md)
 
 ## Algorithm
 
@@ -92,4 +92,4 @@
 
 ## Git&GitHub
 
-- [제대로 파는 Git & GitHub - by 얄코](https://github.com/azurealstn/TIL/tree/main/git-flow/inflearn-coding-test)
+- [제대로 파는 Git & GitHub - by 얄코](https://github.com/azurealstn/TIL/blob/main/git-flow/제대로_파는_Git과GitHub.md)
