@@ -64,7 +64,7 @@ IP 프로토콜의 한계점을 극복한 것이 바로 TCP 프로토콜이다.
     
     ## TCP 3 way handshake
     
-    ![tcp4.PNG](../images/모든_개발자를_위한_HTTP_웹_기본_지식/tcp4.PNG)
+    ![tcp4.PNG](/images/모든_개발자를_위한_HTTP_웹_기본_지식/tcp4.PNG)
     
     1. 먼저 `SYN`이라고 연결해달라고 서버에 던집니다.
     2. 서버는 클라이언트에 대한 `SYN`의 응답을 `ACK`로 보내고 역시나 서버도 연결해달라고  `SYN`도 같이 보냅니다.

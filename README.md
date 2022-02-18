@@ -5,6 +5,7 @@
 ## HTML
 
 - [HTML 개념](https://github.com/azurealstn/TIL/blob/main/html/html-01.md)
+- [HTML5, 첫번째](/html/html-02.md)
 
 ## CSS
 
