@@ -98,3 +98,7 @@
 ## Git&GitHub
 
 - [제대로 파는 Git & GitHub - by 얄코](https://github.com/azurealstn/TIL/blob/main/git-flow/제대로_파는_Git과GitHub.md)
+
+## Blog
+
+- [강의를 효율적으로 듣는 방법](https://azurealstn.tistory.com/122)
