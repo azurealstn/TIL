@@ -9,6 +9,7 @@
 - [HTML 내의 각 태그들](/html/html-03.md)
 - [hyperlink란?](/html/html-04.md)
 - [Form 태그](/html/html-05.md)
+- [박스모델을 볼 수 있는 안경](/html/html-06.md)
 
 ## CSS
 
