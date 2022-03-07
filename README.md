@@ -20,6 +20,7 @@
 
 ## Publishing
 
+- [navbar 만들기](https://github.com/azurealstn/navbar-component)
 - [간단한 유튜브 정적 페이지](https://github.com/azurealstn/youtube-publishing)
 - [HTML, CSS, JS로 포트폴리오 만들기](https://github.com/azurealstn/my-portfolio)
 
