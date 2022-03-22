@@ -525,10 +525,16 @@ API를 만들 때는 URI 설계가 굉장히 중요하다.
 
 또한 REST API는 HTTP 프로토콜을 그대로 활용한 것으로 별도의 인프라를 구성할 필요가 없다.
 
+- [restfulapi_naming](https://restfulapi.net/resource-naming/)도 보면 좋을 것 같다.
+
 ## HTTP 메소드
 
 - GET, POST, PATCH, PUT, DELETE에 대해 알아보자.
 - 참고: https://developer.mozilla.org/ko/docs/Web/HTTP/Methods
+- 멱등: 같은 데이터를 한번 호출하든 100번 호출하든 결과가 똑같다.
+
+> 멱등이 필요한 이유
+> 서버가 timeout으로 응답을 못주었을 때, 클라이언트가 같은 요청을 다시 해도 되는지 -> 자동 복수 메커니즘에 필요하다.
 
 ### GET
 
@@ -537,6 +543,12 @@ API를 만들 때는 URI 설계가 굉장히 중요하다.
 - 서버에 전달하고 싶은 데이터는 `query string`을 통해 전달
 - GET 요청에 메시지 바디에 데이터를 담을 수도 있지만 이는 권장하지 않으므로 사용하지 말자.
 - 캐시가 가능하다.
+- 멱등하다.
+
+```json
+GET /members/100 HTTP/1.1
+Host: example.com
+```
 
 ### POST
 
@@ -544,10 +556,25 @@ API를 만들 때는 URI 설계가 굉장히 중요하다.
 - `메시지 바디`를 통해 서버로 요청 데이터 전달
     - 서버는 요청 데이터를 처리
     - 메시지 바디 타입(html, json..)은 `Content-Type`에 나타낸다.
+- **멱등 아니다.**
+    - 결제를 생각해보면 한번 호출하고 두번 호출하는 것은 다르다.
+
+```json
+POST /members HTTP/1.1
+Host: example.com
+Content-type: application/json
+
+{
+    "name": "minsu",
+    "age": 30
+}
+```
 
 ### POST 기능
 
 1. 새 리소스 생성(등록)
+    - POST는 리소스의 URI를 모르지만 서버가 새로 등록된 리소스 URI를 생성해준다.
+    - 이렇게 서버가 리소스 URI를 생성하고 관리하는 것을 `컬렉션(Collection)`이라고 하며, 컬레션은 `/members`를 말한다.
 2. 요청 데이터 처리
 
 - 주문에서 결제완료 -> 배달시작 -> 배달완료
@@ -558,3 +585,123 @@ API를 만들 때는 URI 설계가 굉장히 중요하다.
 - `ajax`를 통해 데이터를 조회할 때 메시지 바디에 담고싶어서 POST를 사용할 수도 있다.
 - 하지만 조회할 때는 왠만하면 `GET`을 사용하자.
     - 그 이유는 `캐싱!`
+
+### PUT
+
+- 리소스가 없으면 새로운 리소스를 생성하고, 리소스가 있으면 리소스를 완전히 대체한다. (덮어버린다.)
+- POST와의 유일한 차이점은 PUT은 클라이언트가 리소스의 위치를 알고 URI를 딱 지정한다. ex) /members/100
+    - 이처럼 클라이언트가 리소스 URI를 알고 관리하는 것을 `스토어(Store)`라고 하며, 스토어는 `/members`가 된다.
+- 하지만 POST는 클라이언트가 리소스의 위치를 알지 못하고 자동으로 만들어준다. ex) /members
+- 멱등하다.
+
+```json
+PUT /members/100 HTTP/1.1
+Host: example.com
+Content-type: application/json
+
+{
+    "name": "minsu",
+    "age": 20
+}
+```
+
+#### ❗ 잠깐 !
+
+리소스를 완전히 대체한다는게 무슨 말일까?
+
+만약 기존 데이터가 아래와 같다고 가정해보자.
+
+```json
+{
+    "name": "minsu",
+    "age": 20
+}
+```
+
+여기서 PUT 메서드를 사용해서 `age`만 30으로 변경한다면 어떤 일이 벌어질까?
+
+```json
+PUT /members/100 HTTP/1.1
+Host: example.com
+Content-type: application/json
+
+{
+    "age": 30
+}
+```
+
+age만 수정하면 되기 때문에 json 데이터는 age만 넘겨서 30으로 변경했다.
+
+그러면 PUT의 완전히 대체된다는 특징 때문에 `name`이라는 필드는 없어지고 `age`만 남게됩니다.
+
+만약 내가 회원가입을 하고 회원수정을 나이만 수정하고 싶은데 PUT 메서드를 사용하게 되면 나의 아이디, 비밀번호, 이메일... 이러한 중요한 정보들을 모두 잃을 수 있다.
+
+### PATCH
+
+내가 의도한대로 리소스의 부분만 수정되게 하려면 바로 `PATCH`를 사용하면 된다.
+
+```json
+PATCH /members/100 HTTP/1.1
+Host: example.com
+Content-type: application/json
+
+{
+    "age": 30
+}
+```
+
+그러면 위와 같이 age만 30으로 변경해도 데이터는 `name`과 `age` 모두 그대로 남게된다.
+
+- **PATCH는 멱등이 되도록 할 수 있고, 멱등이 안되게 할 수도 있다.**
+- 예를 들어보자.
+
+```json
+{
+    "age": 22
+}
+```
+
+이것은 멱등이다.
+
+하지만 아래는 멱등이 아니다.
+
+```json
+{
+    "age": 22,
+    "calc": add,
+    "plusNumber": 1
+}
+```
+
+이것은 계속 메서드를 수행할 때마다 `+1` 더하는 수행을 한다고 했을 때 age의 값이 변한다.
+
+### DELETE
+
+- 지정한 리소스를 삭제
+- 멱등하다.
+
+```json
+DELETE /members/100 HTTP/1.1
+Host: example.com
+```
+
+### 정리 (POST, PUT, PATCH)
+
+- POST는 리소스의 위치를 알지 못해도 자동으로 생성해준다.
+- PUT은 리소스의 위치를 알고 있고, 기존 리소스를 삭제하고 완전히 대체하기 때문에 중요한 데이터는 PUT을 사용하면 안된다.
+- 중요한 데이터를 부분 수정하려면 PATCH를 사용한다.
+
+<br>
+<br>
+<br>
+
+## 클라이언트에서 서버로 데이터 전송
+
+클라이언트에서 서버로 데이터를 전송하는데 크게 두 가지가 있다.
+
+- 쿼리스트링을 통한 데이터 전송
+    - GET
+- 메시지 바디를 통한 데이터 전송
+    - POST, PUT, PATCH
+
+-> 자세한 내용은 [강의](https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC#)에서 `HTTP 메서드 활용편`을 보도록 하자.
