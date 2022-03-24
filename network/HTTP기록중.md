@@ -806,5 +806,74 @@ Host: localhost:8080
 
 자판기에 동전을 넣을 때 `+` 되야하는데 갑자기 `-` 된다고 이를 5xx 오류로 내면 안된다. 즉, 비즈니스 로직으로 된 예외는 5xx 오류를 내지 말자.
 
+<br>
+<br>
+<br>
 
+## 쿠키
 
+참고: https://developer.mozilla.org/ko/docs/Web/HTTP/Cookies
+
+쿠키는 서버가 사용자의 웹브라우저에 전송하는 **작은 데이터 조각(=쿠키)**을 말한다.
+
+> HTTP의 특징인 Stateless, 즉 무상태 때문에 쿠키를 사용하여 로그인 같은 상태를 유지할 수 있다.
+
+### 쿠키의 문제점
+
+1. 모든 요청에 쿠키가 포함되도록 개발해야 되는 수고로움
+2. 브라우저가 완전히 종료되면 쿠키가 사라짐
+
+### 해결
+
+이러한 쿠키의 문제점을 해결하기 위해 **쿠키 헤더**를 사용한다.
+
+1. 클라이언트의 로그인 요청에 서버는 `Set-Cookie` 헤더를 포함해서 응답한다.
+
+```
+HTTP/1.1 200 OK
+Content-type: text/html
+Set-Cookie: username=minsu
+
+<p>minsu 환영!</p>
+```
+
+- Set-Cookie : \<cookie-name>=\<cookie-value>
+    - 쿠키는 `Key-Value` 형태로 시작한다.
+    - 서버에서 클라이언트로 쿠키를 전송하기 위해 사용한다.
+
+2. 클라이언트는 서버로부터 받은 쿠키를 웹브라우저에 있는 **쿠키 저장소**에 저장한다.
+
+![note drawio](https://user-images.githubusercontent.com/55525868/159922091-58931fb9-dad6-43a9-accf-0d7a6a2f0296.png)
+
+3. 이제 클라이언트가 **동일한 서버**에 로그인 요청을 다시 하게 되면 웹브라우저에 저장된 `username=minsu`라는 정보를 `Cookie` 헤더에 담아서 요청하게 된다.
+
+```
+GET /sample_page.html HTTP/1.1
+Host: www.example.org
+Cookie: username=minsu
+```
+
+- Cookie: name=value
+    - Cookie 헤더 역시 `Key-Value` 형태이고,
+    - `Set-Cookie` 헤더와 함께 서버에 의해 이전에 전송되어 저장된 정보이다.
+
+이렇게 쿠키를 사용하게 되면 모든 요청에 쿠키 정보를 자동으로 포함하게 된다. -> 로그인 유지
+
+하지만 모든 요청에 쿠키 정보를 넣게 되면 **보안에 문제**가 발생할 수 있다.
+
+그래서 해결 방법은 `Set-Cookie`에 추가적인 정보를 더 전달한다.
+
+```
+Set-Cookie: sessionId=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; path=/; domain=.google.com; Secure
+```
+
+- Expires: 만료일이 지나면 쿠키는 삭제된다.
+    - 세션 쿠키: 만료 날짜를 생략하면 웹브라우저 완전히 종료시까지만 유지
+    - 영속 쿠키: 만료 날짜를 입력하면 해당 날짜까지 유지
+- domain: 쿠키의 스코프 정의. 어떤 URL에 쿠키를 보내야 하는지.
+    - 생략시 현재 문서 위치의 호스트 일부를 기본값으로 지정
+- path: 쿠키의 스코프 정의. path는 `Cookie` 헤더를 전송하기 위해 요청되는 URL내에 반드시 존재해야 하는 **URL 경로**를 말한다. (일반적으로 `path=/` 루트로 지정)
+- Secure: HTTPS 프로토콜에서만 전송이 가능하다.
+
+> 쿠키를 사용하게 되면 쿠키 정보가 무조건 서버에 전송되기 때문에 최소한으로 사용해야 한다. (트래픽 발생 주의!)
+> 만약 서버에 전송되기를 원하지 않는다면 웹 스토리지 (localStorage, sessionStorage)를 사용하되 민감한 정보는 절대 넣지 않길!
