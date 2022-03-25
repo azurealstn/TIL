@@ -877,3 +877,120 @@ Set-Cookie: sessionId=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; path=/; doma
 
 > 쿠키를 사용하게 되면 쿠키 정보가 무조건 서버에 전송되기 때문에 최소한으로 사용해야 한다. (트래픽 발생 주의!)
 > 만약 서버에 전송되기를 원하지 않는다면 웹 스토리지 (localStorage, sessionStorage)를 사용하되 민감한 정보는 절대 넣지 않길!
+
+<br>
+<br>
+<br>
+
+## 캐시
+
+참고: https://developer.mozilla.org/ko/docs/Web/HTTP/Caching
+
+웹사이트와 애플리케이션 성능은 이전에 가져온 리소스들을 재사용함으로써 향상될 수 있다. 이러한 역할을 해주는 것이 `캐시`이고, 웹 캐시는 네트워크 트래픽을 줄여줌으로써 리소스를 보여주는데 필요한 시간을 단축시킨다.
+
+### 캐시 기본 동작
+
+![note drawio (1)](https://user-images.githubusercontent.com/55525868/160111868-26ac59c3-6f65-4cd7-adfa-760792f7324b.png)
+
+**먼저 클라이언트가 서버에 처음 요청을 하게 되면 그건 무조건 다운로드 받아야됨을 인지하자.**
+
+1. 클라이언트가 새로운 리소스를 서버에 요청한다.
+2. 서버는 응답할 때 헤더에 `cache-control`을 추가해서 요청에 대한 리소스 `style.css`를 응답해준다.
+
+```
+GET HTTP/1.1 200 OK
+Content-Type: text/css
+cache-control: max-age=60
+
+style.css
+```
+
+3. 웹브라우저 캐시에 `style.css`를 저장하고, `max-age`가 60이면 웹브라우저에 저장된 캐시 60초동안 유효하다는 뜻이다.
+4. 이제 클라이언트가 같은 리소스를 재요청하게 되면 일단 브라우저 캐시부터 찾은 후에 있으면 그 리소스를 바로 띄우는 형태다.
+
+하지만 `max-age`의 시간이 끝나면 다시 요청해서 다운로드 받아야된다.
+
+만약 같은 리소스를 요청했는데 유효 시간이 만료되었다고 또 다운로드받는 것이 과연 효율적인가?
+
+이것을 해결하기 위해 HTTP 응답 메시지에 **검증 헤더인 `Last-Modified`가 추가된다.
+
+### Last-Modified
+
+영어 그대로 마지막으로(최근에) 수정된 날짜와 시각을 말한다. 이는 저장된 리소스가 이전과 같은지 **유효성 검사자**로 사용된다. 
+
+```
+GET HTTP/1.1 200 OK
+Content-Type: text/css
+cache-control: max-age=60
+Last-Modified: Fri, 25 Mar 2022 07:28:00 GMT
+
+style.css
+```
+
+그러면 브라우저에 저장된 데이터(style.css)의 최종 수정일은 **2022년 3월 25일 금요일 7시 28분**이다.
+
+자, 이제 `max-age`의 유효시간이 지나고 똑같은 요청을 한다고 가정해보자. 요청할 때 브라우저 캐시를 찾아서 `Last-Modified`가 있는지 확인하고 있으면 요청할 때 다음과 같이 요청 메시지를 보낸다.
+
+```
+GET style.css
+if-modified-since: Fri, 25 Mar 2022 07:28:00 GMT
+```
+
+요청할 때 위와 같은 HTTP 요청 메시지에 `if-modified-since`라는 헤더를 같이 보내준다.
+
+그래서 **Last-Modified의 날짜와 if-modified-since의 날짜를 서로 비교**해서 같으면 서버는 다음과 같이 응답 메시지를 보낸다.
+
+```
+GET HTTP/1.1 304 Not Modified
+Content-Type: text/css
+cache-control: max-age=60
+Last-Modified: Fri, 25 Mar 2022 07:28:00 GMT
+
+(없음)
+```
+
+**수정되지 않았다고 상태코드를 `304 Not Modified`로 보낸다.**
+
+**그리고 중요한 것은 HTTP 메시지 바디를 보내지 않는다는 것이다.** 이러면 네트워크의 부하를 크게 줄일 수 있는 것이다.
+
+## 캐시 제어
+
+### Cache-Control 헤더
+
+- Cache-Control: max-age -> 캐시 유효 시간, 초 단위
+- Cache-Control: no-cache -> 데이터는 캐시하지만 유효성을 확인하기 위해 **원 서버(origin)**로 요청한다.
+    - 유효성이란, `if-modified-since` 같은 **조건부 요청**을 해서 **검증 헤더**인 `Last-Modified`의 날짜를 서로 비교하고 같으면 `304 Not Modified` 상태코드를 응답한다.
+- Cache-Control: no-store -> 데이터에 민감한 정보가 있으므로 저장하면 안된다. 따라서 요청시 매번 리소스를 다시 다운로드 받아야 한다.
+
+> 원 서버(origin): 원래의, 진짜 서버를 의미한다.
+> 예를 들어, 원서버가 호주에 있고, 한국에 있는 내가 요청하려고 하면 중간에 **프록시 캐시 서버**가 있다.
+> 그러면 프록시 캐시 서버에 한국 어딘가에 요청 리소스를 저장해놓고 내가(웹브라우저) 요청하면 원서버에서 응답을 받는 것이 아니라 프록시 캐시 서버에서 응답을 받는다. 이러면 사용자는 빠르게 응답받을 수 있게 된다.
+
+### Pragma
+
+- Pragma: no-cache -> HTTP/1.0의 하위호환으로 `Cache-Control: no-cache`와 동일한 역할을 수행하고 HTTP/1.0에 대응할 수 있도록 사용한다.
+
+## 캐시 무효화
+
+만약 어떤 페이지는 절대 ❗ **캐시되면 안돼!** 라고 하면 확실하게 캐시를 무효화시켜야 한다.
+
+예를 들어, 내 통장잔고를 보여주는 페이지 -> 통장잔고처럼 중요한 정보는 캐시되면 안된다.
+
+다음 2가지 헤더를 쓰면 캐시 무효화가 된다.
+
+- Cache-Control: no-cache, no-store, must-revalidate
+- Pragma: no-cache
+
+통장잔고가 왜 캐시되면 안되는지 보면 `must-revalidate`의 특징을 보면 알 수 있다.
+
+`no-cache`의 경우는 원서버로 요청해서 검증을 한다고 했다. 여기서 한가지 더 특징은 원서버로 요청할 때 먼저 중간에 **프록시 캐시 서버**가 있다고 했는데,
+
+![note drawio (2)](https://user-images.githubusercontent.com/55525868/160122201-08359eb5-59c9-4d50-a63b-ab093abe052d.png)
+
+위 그림처럼 프록시 캐시 서버와 원 서버에 네트워크가 단절이 되면 프록시 캐시 서버는 그래도 전에 있던 데이터를 찾아서 `200 OK` 응답을 내린다.
+
+하지만 **must-revalidate** 같은 경우는 no-cache와 비슷하게 원서버로 요청해서 검증을 하지만 이 때 네트워크가 단절이 되면 아에 그냥 `504 Gateway timeout`이라는 오류 상태코드를 보낸다.
+
+![note drawio (3)](https://user-images.githubusercontent.com/55525868/160122214-0b8d0fcd-6f1e-45e5-b2a1-7b648d6e6688.png)
+
+이러면 오류가 발생해도 통장잔고같은 중요한 데이터를 아에 보내지 않는다. 그래서 `must-revalidate`까지 꼭 추가해주어야 한다.
