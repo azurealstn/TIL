@@ -21,7 +21,7 @@
 - 출발지 IP와 목적지 IP를 통해 데이터를 전송한다.
 
 > 패킷 : package와 bucket의 합친 말로, 네트워크상에서 전송하는 데이터의 형식화된 블록이다.
-참고: https://ko.wikipedia.org/wiki/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC_%ED%8C%A8%ED%82%B7
+> 참고: https://ko.wikipedia.org/wiki/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC_%ED%8C%A8%ED%82%B7
 
 ## IP 프로토콜의 한계
 
@@ -32,7 +32,7 @@
 - 프로그램 구분
     - 한 IP로 여러 애플리케이션을 돌릴 경우
 
-**이러한 IP 프로토콜의 한계를 TCP가 해결**
+**이러한 IP 프로토콜의 한계를 TCP 프로토콜이 해결**
 
 <br>
 <br>
@@ -72,7 +72,7 @@
 
 ## TCP 특징
 
-- TCP란 전송 제어 프로토콜(Transmissioni Control Protocol)
+- TCP란 전송 제어 프로토콜(Transmission Control Protocol)
 - 연결지향 - TCP 3 way handshake
 - 데이터 전달 보증
     - 중간에 패킷이 누락되어도 알 수 있음
@@ -110,8 +110,6 @@
 위 과정이 이루어져야 신뢰성 있는 통신이 가능합니다.  
 만약 데이터를 전송했는데 그에 대한 응답이 없으면 정상적으로 연결이 되지 않은 것임
 
-  
-
 ### 순서 보장
 
 1. 클라이언트에서 서버로 패킷1, 패킷2, 패킷3 ... 순서로 전송한다.
@@ -119,7 +117,7 @@
 
 이렇게 순서가 보장이 될 수 있는 이유는 TCP의 전송 제어, 검증 등의 정보 때문에 가능
 
-그래서 TCP는 신뢰성 있는 프로토콜이라고도 불림
+**그래서 TCP는 신뢰성 있는 프로토콜이라고도 불림**
 
 <br>
 <br>
@@ -133,12 +131,12 @@ UDP는 TCP과 같은 전송 계층에 있음
 
 - 사용자 데이터그램 프로토콜 (User Datagram Protocol)
 - 기능이 거의 없음
-- 연결지향 - TCP 3 way handshake X
+- 비연결지향 - TCP 3 way handshake X
 - 데이터 전달 보증 X
 - 순서 보장 X
-- 데이터 전달 및 순서를 보장하지 않지만 그 만큼 속도가 빠르다는 장점이 있음
+- 데이터 전달 및 순서를 보장하지 않지만 **그 만큼 속도가 빠르다는 장점이 있음**
 
-이는 즉, IP와 거의 같지만 여기에 PORT와 체크섬(검증)이 추가됨
+즉 이는 IP와 거의 같지만 여기에 PORT와 체크섬(검증)이 추가됨.
 
 IP는 한 IP에 여러 애플리케이션이 돌아갈 경우에 패킷을 구분할 수가 없는 것이 IP의 한계
 
@@ -146,7 +144,7 @@ IP는 한 IP에 여러 애플리케이션이 돌아갈 경우에 패킷을 구�
 
 <br>
 
-**결국 TCP와 UDP의 결정적 차이는 '속도'**
+#### 결국 TCP와 UDP의 결정적 차이는 '속도'
 
 TCP는 3 way handshake라는 과정을 거쳐야 하기 때문에 속도가 UDP보다 느릴 수 밖에 없음
 
@@ -195,7 +193,9 @@ PORT는 한 IP 내에 여러 어플리케이션이 돌고 있을 때 각 패킷�
 
 <br>
 
-그래서 사람들이 외우기 쉽게 하기 위해 IP에 이름을 짓는다. 이것이 바로 `도메인명`
+그래서 사람들이 외우기 쉽게 하기 위해 IP에 이름을 짓는다.
+
+이것이 바로 **도메인명**
 
 예를 들어 구글이면 구글 사이트가 만약 IP가 `123.456.673.2` 이렇게 되어 있으면 사람들이 굉장히 구글 사이트에 들어가기가 힘들 것입니다.  
 
@@ -240,6 +240,7 @@ PORT는 한 IP 내에 여러 어플리케이션이 돌고 있을 때 각 패킷�
 ### DNS
 
 - IP는 외우기 어렵고 변경되면 골치아픈데 그러한 문제를 해결해주는 것이 `DNS`이다.
+- 또한 IP가 변경되도 도메인명은 그대로 이므로 상관없다.
 
 <br>
 <br>
@@ -456,7 +457,7 @@ HTTP는 문서 간에 정보를 주고받을 수 있는 프로토콜이라고 �
 
 (가정) HTTP를 통해 html 자원을 받고싶다면 시간이 얼마나 걸릴까?
 
-먼저 TCP/IP의 `3-way-hankshake로 연결확인`하고 `html 요청/응답 확인`하고 `TCP/IP 연결을 종료`한다. 이게 하나의 리소스(html)를 다운받는데 일련의 과정인데 이 과정을 0.3초 걸린다고 가정해보자.
+먼저 TCP/IP의 **3-way-hankshake로 연결확인**하고 **html 요청/응답 확인**하고 **TCP/IP 연결을 종료**한다. 이게 하나의 리소스(html)를 다운받는데 일련의 과정인데 이 과정을 0.3초 걸린다고 가정해보자.
   
 ![UI drawio (4)](https://user-images.githubusercontent.com/55525868/158779319-e73b1507-6ba9-4756-9d91-f2157bc4f135.png)
 
@@ -470,7 +471,7 @@ HTTP는 문서 간에 정보를 주고받을 수 있는 프로토콜이라고 �
 
 HTTP 지속 연결을 사용하지 않는다면 일련의 과정마다 매번 연결하고 종료를 해줘야 했지만
 
-HTTP 지속 연결을 사용하면 `한번 연결`하고 `리소스(html,css,js) 요청/응답받고` `한번 종료`시키기 때문에 시간이 훨씬 단축된다.
+HTTP 지속 연결을 사용하면 **한번 연결**하고 **리소스(html,css,js) 요청/응답받고** **한번 종료**시키기 때문에 시간이 훨씬 단축된다.
 
 ### 💫 참고!!!
 
@@ -481,7 +482,8 @@ HTTP 지속 연결을 사용하면 `한번 연결`하고 `리소스(html,css,js)
 
 **이를 해결하기 위해서는 어떻게든 머리를 짜서 반드시 Stateless하게 설계를 해야 한다.**
 
-> 간단한 해결법은 일단은 정적 페이지하나 생성해서 일단 그 페이지를 보게 한 다음에 이벤트 페이지로 들어가게 만드는 방법
+> 간단한 해결법은 일단은 정적 페이지하나 생성해서 일단 그 페이지를 보게 한 다음에 이벤트 페이지로 들어가게 만드는 방법.
+> 최대한 동시 요청을 적게 한다.
 
 ## HTTP 메시지 구조
 
@@ -534,7 +536,7 @@ API를 만들 때는 URI 설계가 굉장히 중요하다.
 - 멱등: 같은 데이터를 한번 호출하든 100번 호출하든 결과가 똑같다.
 
 > 멱등이 필요한 이유
-> 서버가 timeout으로 응답을 못주었을 때, 클라이언트가 같은 요청을 다시 해도 되는지 -> 자동 복수 메커니즘에 필요하다.
+> 서버가 timeout으로 응답을 못주었을 때, 클라이언트가 같은 요청을 다시 해도 되는지 -> 자동 복구 메커니즘에 필요하다.
 
 ### GET
 
@@ -552,9 +554,9 @@ Host: example.com
 
 ### POST
 
-- 요청 데이터 처리
-- `메시지 바디`를 통해 서버로 요청 데이터 전달
-    - 서버는 요청 데이터를 처리
+- 데이터 처리를 담당.
+- `메시지 바디`를 통해 서버로 데이터 전달한다.
+    - 서버는 넘어온 데이터를 처리한다.
     - 메시지 바디 타입(html, json..)은 `Content-Type`에 나타낸다.
 - **멱등 아니다.**
     - 결제를 생각해보면 한번 호출하고 두번 호출하는 것은 다르다.
@@ -575,16 +577,14 @@ Content-type: application/json
 1. 새 리소스 생성(등록)
     - POST는 리소스의 URI를 모르지만 서버가 새로 등록된 리소스 URI를 생성해준다.
     - 이렇게 서버가 리소스 URI를 생성하고 관리하는 것을 `컬렉션(Collection)`이라고 하며, 컬레션은 `/members`를 말한다.
-2. 요청 데이터 처리
 
-- 주문에서 결제완료 -> 배달시작 -> 배달완료
-- 단순히 등록하는 것을 넘어서 프로세스의 상태가 변경되는 경우
-- 예) POST /orders/{orderId}/start-delivery (배달시작) -> start-delivery처럼 URI에 동사가 있으면 이를 `컨트롤 URI`라고 한다.
+2. 데이터 처리 -> 프로세스의 상태 변경
+    - **컨트롤 URI**
+
 3. 다른 메서드로 처리하기 애매한 경우
-
-- `ajax`를 통해 데이터를 조회할 때 메시지 바디에 담고싶어서 POST를 사용할 수도 있다.
-- 하지만 조회할 때는 왠만하면 `GET`을 사용하자.
-    - 그 이유는 `캐싱!`
+    - `ajax`를 통해 데이터를 조회할 때 메시지 바디에 담고싶어서 POST를 사용할 수도 있다.
+    - 하지만 조회할 때는 왠만하면 `GET`을 사용하자.
+        - 그 이유는 `캐싱!`
 
 ### PUT
 
@@ -634,7 +634,7 @@ age만 수정하면 되기 때문에 json 데이터는 age만 넘겨서 30으로
 
 그러면 PUT의 완전히 대체된다는 특징 때문에 `name`이라는 필드는 없어지고 `age`만 남게됩니다.
 
-만약 내가 회원가입을 하고 회원수정을 나이만 수정하고 싶은데 PUT 메서드를 사용하게 되면 나의 아이디, 비밀번호, 이메일... 이러한 중요한 정보들을 모두 잃을 수 있다.
+만약 내가 회원가입을 하고 회원수정을 나이만 수정하고 싶은데 PUT 메서드를 사용하게 되면 나의 아이디, 비밀번호, 이메일... 이러한 중요한 정보들을 모두 잃을 수 있다. 😨
 
 ### PATCH
 
@@ -654,6 +654,7 @@ Content-type: application/json
 
 - **PATCH는 멱등이 되도록 할 수 있고, 멱등이 안되게 할 수도 있다.**
 - 예를 들어보자.
+- 참고: https://www.inflearn.com/questions/110644
 
 ```json
 {
@@ -783,16 +784,16 @@ Host: localhost:8080
 
 ## 4xx
 
-클라이언트 오류❗
+클라이언트 오류 ❗
 
 - 400 Bad Request : 클라이언트가 잘못된 요청을 하고 있기 때문에 발생하는 상태코드
-- 401 Unauthorized : 클라이언트는 특정 리소스에 대한 인증이 필요
-- 403 Forbidden : 서버가 요청을 이해했지만 권한으로 인해 거부
+- 401 Unauthorized : 클라이언트는 특정 리소스에 대한 **인증이 필요**
+- 403 Forbidden : 서버가 요청을 이해했지만 **권한으로 인해 거부**
 - 404 Not Found : 리소스 자체가 없음
 
 ## 5xx
 
-서버 오류❗
+서버 오류 ❗
 
 - 503 Service Unavailable : 서버가 과부하로 다운되서 서비스 이용 불가 될 때
 
@@ -892,7 +893,7 @@ Set-Cookie: sessionId=a3fWa; Expires=Wed, 21 Oct 2015 07:28:00 GMT; path=/; doma
 
 ![note drawio (1)](https://user-images.githubusercontent.com/55525868/160111868-26ac59c3-6f65-4cd7-adfa-760792f7324b.png)
 
-**먼저 클라이언트가 서버에 처음 요청을 하게 되면 그건 무조건 다운로드 받아야됨을 인지하자.**
+**먼저 클라이언트가 서버에 처음 요청을 하게 되면 서버로부터 필요한 리소스들은 무조건 다운로드 받아야됨을 인지하자.**
 
 1. 클라이언트가 새로운 리소스를 서버에 요청한다.
 2. 서버는 응답할 때 헤더에 `cache-control`을 추가해서 요청에 대한 리소스 `style.css`를 응답해준다.
@@ -912,7 +913,7 @@ style.css
 
 만약 같은 리소스를 요청했는데 유효 시간이 만료되었다고 또 다운로드받는 것이 과연 효율적인가?
 
-이것을 해결하기 위해 HTTP 응답 메시지에 **검증 헤더인 `Last-Modified`가 추가된다.
+이것을 해결하기 위해 HTTP 응답 메시지에 **검증 헤더**인 `Last-Modified`가 추가된다.
 
 ### Last-Modified
 
@@ -994,3 +995,21 @@ Last-Modified: Fri, 25 Mar 2022 07:28:00 GMT
 ![note drawio (3)](https://user-images.githubusercontent.com/55525868/160122214-0b8d0fcd-6f1e-45e5-b2a1-7b648d6e6688.png)
 
 이러면 오류가 발생해도 통장잔고같은 중요한 데이터를 아에 보내지 않는다. 그래서 `must-revalidate`까지 꼭 추가해주어야 한다.
+
+<br>
+<br>
+<br>
+
+## References
+
+- https://www.inflearn.com/course/http-%EC%9B%B9-%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC#
+- *https://ko.wikipedia.org/wiki/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC_%ED%8C%A8%ED%82%B7*
+- [https://hahahoho5915.tistory.com/15](https://hahahoho5915.tistory.com/15)
+- *https://hanamon.kr/%EB%84%A4%ED%8A%B8%EC%9B%8C%ED%81%AC-%EA%B8%B0%EB%B3%B8-url-uri-urn-%EC%B0%A8%EC%9D%B4%EC%A0%90/*
+- *https://hihighlinux.tistory.com/73*
+- [https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html](https://gmlwjd9405.github.io/2018/09/21/rest-and-restful.html)
+- [https://restfulapi.net/resource-naming/](https://restfulapi.net/resource-naming/)
+- [https://developer.mozilla.org/ko/docs/Web/HTTP/Methods](https://developer.mozilla.org/ko/docs/Web/HTTP/Methods)
+- [https://www.inflearn.com/questions/110644](https://www.inflearn.com/questions/110644)
+- [https://developer.mozilla.org/ko/docs/Web/HTTP/Cookies](https://developer.mozilla.org/ko/docs/Web/HTTP/Cookies)
+- [https://developer.mozilla.org/ko/docs/Web/HTTP/Caching](https://developer.mozilla.org/ko/docs/Web/HTTP/Caching)
