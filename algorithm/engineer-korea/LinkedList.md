@@ -21,3 +21,70 @@ LinkedList란 일렬로 연결된 데이터를 저장할 때 사용한다. 데�
 
 반면에 양방향 LinkedList는 앞에 head 주소와 뒤에 tail 주소를 양쪽에 모두 갖고 있기 때문에 조회할 때 단방향 LinkedList보다 빠르다. 다만 메모리를 더 잡아먹는다는 단점이 있다.
 
+## LinkedList 단방향 구현
+
+<details>
+<summary>코드보기</summary>
+<div markdown="1">
+```java
+package com.azurealstn.algorithm.try1.linkedlist;
+
+class LinkedList {
+    Node header;
+
+    static class Node {
+        int data;
+        Node next = null;
+    }
+
+    LinkedList() {
+        header = new Node();
+    }
+
+    public void append(int data) {
+        Node end = new Node();
+        end.data = data;
+        Node n = header;
+        while (n.next != null) {
+            n = n.next;
+        }
+        n.next = end;
+    }
+
+    public void remove(int data) {
+        Node n = header;
+        while (n.next != null) {
+            if (n.next.data == data) {
+                n.next = n.next.next;
+            } else {
+                n = n.next;
+            }
+        }
+    }
+
+    public void retrieve() {
+        Node n = header.next;
+        while (n.next != null) {
+            System.out.print(n.data + " -> ");
+            n = n.next;
+        }
+        System.out.println(n.data);
+    }
+
+}
+
+public class SinglyLinkedList {
+    public static void main(String[] args) {
+        LinkedList ll = new LinkedList();
+        ll.append(1);
+        ll.append(2);
+        ll.append(3);
+        ll.append(4);
+        ll.retrieve();
+        ll.remove(1);
+        ll.retrieve();
+    }
+}
+```
+</div>
+</details>
