@@ -26,6 +26,7 @@ LinkedList란 일렬로 연결된 데이터를 저장할 때 사용한다. 데�
 <details>
 <summary>코드보기</summary>
 <div markdown="1">
+
 ```java
 package com.azurealstn.algorithm.try1.linkedlist;
 
@@ -86,5 +87,6 @@ public class SinglyLinkedList {
     }
 }
 ```
+
 </div>
 </details>
