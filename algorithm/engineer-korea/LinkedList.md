@@ -1,5 +1,7 @@
 # LinkedList
 
+LinkedList 자료구조에 대해 간략히 알아보겠습니다. LinkedList는 자바 컬렉션 프레임워크 중 List 인터페이스의 구현체이다. List 자료구조의 특징이 순서가 있는 데이터 집합으로 중복이 허용된다.
+
 ## LinkedList 개념
 
 ![LinkedList5](https://user-images.githubusercontent.com/55525868/221391857-36c6049b-b1c0-4874-800c-d62edc03c409.png)
@@ -13,7 +15,7 @@ LinkedList란 일렬로 연결된 데이터를 저장할 때 사용한다. 데�
 하지만 LinkedList는 다음 데이터의 주소를 가지고 있기 때문에 중간에 데이터 삽입이 빠르다. 또한 데이터를 크기가 정해지지 않는다. (가변적 크기)  
 단점은 LinkedList는 인덱스가 없기 때문에 조회할 때 처음 노드부터 찾아나가야 한다.
 
-## LinkedList 단방향, 양방향  개념
+## LinkedList 단방향, 양방향 개념
 
 ![LinkedList3](https://user-images.githubusercontent.com/55525868/221391862-7690bc0d-a776-4f23-8958-7b7085e3152e.png)
 
@@ -21,55 +23,57 @@ LinkedList란 일렬로 연결된 데이터를 저장할 때 사용한다. 데�
 
 반면에 양방향 LinkedList는 앞에 head 주소와 뒤에 tail 주소를 양쪽에 모두 갖고 있기 때문에 조회할 때 단방향 LinkedList보다 빠르다. 다만 메모리를 더 잡아먹는다는 단점이 있다.
 
-## LinkedList 단방향 구현
+## LinkedList 메서드
 
-<details>
-<summary>코드보기</summary>
-<div markdown="1">
+- append(int data) : 리스트의 맨 마지막 노드에 데이터 추가
+- remove(int data) : 리스트의 특정 데이터 삭제 
+
+## LinkedList 단방향 구현
 
 ```java
 package com.azurealstn.algorithm.try1.linkedlist;
 
 class LinkedList {
-    Node header;
+    Node head;
 
     static class Node {
-        int data;
-        Node next = null;
+        int data; //데이터
+        Node next = null; //다음 노드를 null로 초기화
     }
 
+    //LinkedList 객체 생서잇 header 노드 생성
     LinkedList() {
-        header = new Node();
+        head = new Node();
     }
 
     public void append(int data) {
-        Node end = new Node();
-        end.data = data;
-        Node n = header;
-        while (n.next != null) {
-            n = n.next;
+        Node end = new Node(); //추가할 노드 생성
+        end.data = data; //생성한 노드의 데이터 할당
+        Node n = head; //Node n을 head로 초기화
+        while (n.next != null) { //head부터 다음 노드가 null이 아닐 때까지 Loop!
+            n = n.next; //null이 아니면 n을 다음 노드로 계속 이동한다.
         }
-        n.next = end;
+        n.next = end; //위 while문을 돌고나면 n은 마지막 노드가 되고 그 마지막 노드의 다음 노드에 end를 할당
     }
 
     public void remove(int data) {
-        Node n = header;
-        while (n.next != null) {
-            if (n.next.data == data) {
-                n.next = n.next.next;
-            } else {
-                n = n.next;
+        Node n = head; //Node n을 head로 초기화
+        while (n.next != null) { //head부터 다음 노드가 null이 아닐 때까지 Loop!
+            if (n.next.data == data) { //만약 다음 노드의 데이터가 삭제하려는 data와 같다면
+                n.next = n.next.next; //다음 노드는 그 다음 노드를 가리키게 한다.
+            } else { //다음 노드의 데이터가 삭제하려는 data와 같지 않다면
+                n = n.next; //n을 계속 다음 노드로 이동시켜서 삭제할 데이터를 찾는다.
             }
         }
     }
 
-    public void retrieve() {
-        Node n = header.next;
+    public void retrieve() { //단순 리스트 출력 메서드
+        Node n = head.next; //head의 다음 노드부터 출력
         while (n.next != null) {
             System.out.print(n.data + " -> ");
-            n = n.next;
+            n = n.next; //다음 노드로 이동
         }
-        System.out.println(n.data);
+        System.out.println(n.data); //마지막 노드 출력
     }
 
 }
@@ -88,5 +92,6 @@ public class SinglyLinkedList {
 }
 ```
 
-</div>
-</details>
+## Reference
+
+- [유튜브 - 엔지니어대한민국]("https://www.youtube.com/@eleanorlim/videos")
