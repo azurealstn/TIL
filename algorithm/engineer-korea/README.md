@@ -4,6 +4,8 @@
 
 - [LinkedList](./LinkedList.md)
 - [Stack](./Stack.md)
+- [Queue](./Queue.md)
+- [Tree](./Tree.md)
 
 
 ## Reference
