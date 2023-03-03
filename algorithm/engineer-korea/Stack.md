@@ -97,5 +97,5 @@ public class MyStack {
 
 ## Reference
 
-- [엔지니어대한민국 - Stack]("https://www.youtube.com/watch?v=whVUYv0Leg0")
+- [엔지니어대한민국 - Stack](https://www.youtube.com/watch?v=whVUYv0Leg0)
 - https://cocoon1787.tistory.com/691

@@ -45,4 +45,4 @@ Heap에는 2가지가 있다.
 
 ## Reference
 
-- [엔지니어대한민국 - Heap]("https://www.youtube.com/watch?v=jfwjyJvbbBI")
+- [엔지니어대한민국 - Heap](https://www.youtube.com/watch?v=jfwjyJvbbBI)

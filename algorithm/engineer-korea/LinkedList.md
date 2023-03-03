@@ -94,4 +94,4 @@ public class SinglyLinkedList {
 
 ## Reference
 
-- [유튜브 - 엔지니어대한민국]("https://www.youtube.com/@eleanorlim/videos")
+- [유튜브 - 엔지니어대한민국](https://www.youtube.com/@eleanorlim/videos)

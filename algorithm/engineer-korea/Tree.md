@@ -59,7 +59,27 @@ Perfect Binary Tree란 레벨별로 모든 노드가 빈 공간 없이 채워져
 
 ![perfect_binary_tree](https://user-images.githubusercontent.com/55525868/222048726-2ef6d584-7bf1-4398-89f9-bbe1b3c742ae.png)
 
+## Trie(트라이) Tree
+
+Trie 자료구조는 특히 문자열에서 검색을 빠르게 할 수 있는 트리구조이다. 위에서 살펴보았듯이 이진트리의 시간복잡도는 `O(log N)`인 것을 확인할 수 있었다. 따라서 이진트리에서 문자열을 찾을 때는 특정 노드를 찾는데 `O(log N)` 시간이 걸리고 노드를 찾은 후 그 안에 문자열을 찾는데 또 `O(M)` 시간이 걸린다. 따라서 특정 문자열을 찾으려면 총 `O(M log N)`이 걸리게 된다. 
+
+![trie1](https://user-images.githubusercontent.com/55525868/222716814-f88a8629-1a2d-465d-ad11-a273f3746d13.png)
+
+하지만 Trie 자료구조를 이용하면 `O(M)` 만큼만 시간이 걸리게 할 수 있다.
+
+![trie2](https://user-images.githubusercontent.com/55525868/222716827-317e2720-d2b0-4a70-86d5-35556adc8a15.png)
+
+각 노드마다 알파벳이 있고, 위에서부터 레벨별로 하나씩 접근한다.  여기서 문자열에서 첫 알파벳이 항상 같은 것은 아니므로 루트 노드는 비워준다. 이제 `BOOK` 이라는 단어를 찾을 때는 위에서부터 밑으로 `BOOK`이라는 단어를 찾을 때까지 자식노드를 타고 쭉 탐색한다. `K` 노드로 왔을 때는 문자열의 끝이 되므로(빨간색 노드) 이 `K`노드에  `BOOK` 데이터가 저장된다. (즉, 빨간색 노드부분이 데이터가 저장되는 곳이다.) `TOP` 단어와 `TOY` 단어를 찾을 때는 마찬가지이다.
+
+### Trie 장단점
+
+위 방식에서 **Trie의 장점은 문자열 검색을 빠르게 할 수 있다.** 즉, 문자열의 길이만큼 노드를 따라가거나 추가하면 되기 때문에 시간복잡도는 `O(M)`이 된다.
+
+하지만 **Trie의 단점은 메모리를 많이 잡아먹는다.** 문자열이 영어라면 일단 알파벳 26개는 기본이며, 대문자나 여러 특수문자도 허용이 된다면 노드가 무수히 늘어날 것이다.
+
 ## Reference
 
-- [엔지니어대한민국 - Tree]("https://www.youtube.com/watch?v=LnxEBW29DOw")
-- [jud00.tistory.com - 선형, 비선형]("https://jud00.tistory.com/entry/Data-Structure-%EC%84%A0%ED%98%95Linear-%EB%B9%84%EC%84%A0%ED%98%95NonLinear-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0")
+- [엔지니어대한민국 - Tree](https://www.youtube.com/watch?v=LnxEBW29DOw)
+- [엔지니어대한민국 - Trie Tree](https://www.youtube.com/watch?v=TohdsR58i3Q)
+- [jud00.tistory.com - 선형, 비선형](https://jud00.tistory.com/entry/Data-Structure-%EC%84%A0%ED%98%95Linear-%EB%B9%84%EC%84%A0%ED%98%95NonLinear-%EC%9E%90%EB%A3%8C%EA%B5%AC%EC%A1%B0)
+- [rebro.kr - Trie Tree](https://rebro.kr/86)

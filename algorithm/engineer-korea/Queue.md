@@ -137,5 +137,5 @@ public class MyQueue {
 
 ## Reference
 
-- [엔지니어대한민국 - 큐]("https://www.youtube.com/watch?v=W3jNbNGyjMs")
+- [엔지니어대한민국 - 큐](https://www.youtube.com/watch?v=W3jNbNGyjMs)
 - https://cocoon1787.tistory.com/774
