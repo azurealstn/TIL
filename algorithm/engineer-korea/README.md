@@ -7,6 +7,7 @@
 - [Queue](./Queue.md)
 - [Tree](./Tree.md)
 - [Heap](./Heap.md)
+- [Graph](./Graph.md)
 
 
 ## Reference
