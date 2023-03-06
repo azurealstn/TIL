@@ -8,6 +8,7 @@
 - [Tree](./Tree.md)
 - [Heap](./Heap.md)
 - [Graph](./Graph.md)
+- [배열을 이진검색트리로 만들기](./quiz1.md)
 
 
 ## Reference
