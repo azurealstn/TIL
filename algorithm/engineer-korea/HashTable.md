@@ -76,7 +76,126 @@ Hash 충돌을 해결하기 위한 다양한 방법이 있지만 아래 두 가�
 
 ## Hash Table 구현하기
 
+- Separate Chaining 방식으로 구현할 것이다.
+- Hash Table을 구현하기 위해서 아래와 같은 메서드들을 만들 것이다.
+
+**getHashCode(key)**
+
+![hash4](/images/data-structure/hash4.png)
+
+- 먼저 Hash Code를 구하기 위해 `Min` 이라는 키값을 받아서 각각의 알파벳 아스키코드값을 모두 더한 값을 Hash Code라고 정의한다.
+
+**convertToIndex(HashCode)**
+
+![hash5](/images/data-structure/hash5.png)
+
+- Hash Table의 필수조건중 하나는 **고정된 크기의 배열**을 먼저 선언한다.
+- `getHashCode(key)` 통해 가져온 HashCode를 가지고 `HashCode % size`의 결과값을 배열의 index로 사용하면 된다.
+
+**코드 보기**
+
+```java
+package com.azurealstn.algorithm.try1.hashtable;
+
+import java.util.LinkedList;
+import java.util.List;
+
+class HashTable {
+    class Node {
+        String key; //검색할 key
+        String value; //검색 결과로 보여줄 값
+
+        public Node(String key, String value) {
+            this.key = key;
+            this.value = value;
+        }
+
+        public String getValue() {
+            return value;
+        }
+
+        public void setValue(String value) {
+            this.value = value;
+        }
+    }
+
+    LinkedList<Node>[] data; //LinkedList 타입의 배열
+
+    //HashTable 클래스를 생성할 때 고정된 배열의 크기를 초기화해준다.
+    public HashTable(int size) {
+        this.data = new LinkedList[size];
+    }
+
+    //hashCode 구하는 메서드
+    public int getHashCode(String key) {
+        int hashCode = 0;
+        for (char x : key.toCharArray()) { //문자열 key를 char[]로 변환해주는 toCharArray() 메서드
+            hashCode += x; //각 문자의 아스키코드를 모두 더한다.
+        }
+        return hashCode;
+    }
+
+    //hashCode를 가지고 index로 환산하는 메서드
+    public int convertToIndex(int hashCode) {
+        return hashCode % data.length; //hashCode를 배열의 크기로 나눈 나머지가 배열의 인덱스로 사용할 것이다.
+    }
+
+    //배열 방의 노드가 여러가 존재하는 경우 검색 Key를 가지고 해당 노드를 찾아오는 메서드
+    public Node searchKey(LinkedList<Node> list, String key) {
+        if (list == null) return null; //배열 방이 null일 경우에는 null 반환
+        for (Node n : list) { //list 반복문을 돌면서
+            if (n.key.equals(key)) { //노드의 키와 검색할 키가 같으면 해당 노드를 반환한다.
+                return n;
+            }
+        }
+        return null; //같은 key가 없다면 null 반환
+    }
+
+    //Hash Table에 저장하는 메서드
+    public void put(String key, String value) {
+        int hashCode = getHashCode(key); //검색할 key를 가지고 HashCode를 받는다.
+        int index = convertToIndex(hashCode); //받은 HashCode를 가지고 배열의 인덱스로 환산한다.
+        LinkedList<Node> list = data[index]; //환산한 인덱스를 배열의 인덱스로 사용하여 LinkedList를 생성한다.
+        if (list == null) { //배열 방(list)이 비어있으면 list를 새로 생성하여 배열의 방에 배치한다.
+            list = new LinkedList<>();
+            data[index] = list;
+        }
+        Node node = searchKey(list, key); //배열 방(list)이 비어있지 않다면 검색 key를 가지고 해당 노드를 찾아온다.
+        if (node == null) { //해당 노드가 null이면 list의 맨 마지막에 추가한다.
+            list.addLast(new Node(key, value));
+        } else { //해당 노드가 null이 아니면 해당 노드의 값(value)을 할당한다.
+            node.setValue(value);
+        }
+    }
+
+    //Key를 가지고 값(value)을 가져오는 메서드
+    public String get(String key) {
+        int hashCode = getHashCode(key);
+        int index = convertToIndex(hashCode);
+        LinkedList<Node> list = data[index];
+        Node node = searchKey(list, key);
+        //찾은 노드가 null이면 Not Found! 출력, null이 아니면 node의 값을 가져온다.
+        return node == null ? "Not Found!" : node.getValue();
+    }
+}
+public class HashTableTest {
+    public static void main(String[] args) {
+        HashTable H = new HashTable(3); //3개의 고정된 배열
+        H.put("Chae", "He is Good Guy");
+        H.put("Min", "He is Bad Guy");
+        H.put("Su", "She is pretty");
+        H.put("Hong", "She is cute");
+        System.out.println(H.get("Chae")); //He is Good Guy
+        System.out.println(H.get("Min")); //He is Bad Guy
+        System.out.println(H.get("Su")); //She is pretty
+        System.out.println(H.get("Hong")); //She is cute
+        System.out.println(H.get("Hi")); //Not Found!
+    }
+}
+```
+
 ## References
 
+- [엔지니어대한민국 - HashTable](https://www.youtube.com/watch?v=Vi0hauJemxA&t=381s)
 - https://github.com/JaeYeopHan/Interview_Question_for_Beginner/tree/master/DataStructure#hash-table
 - [쉬운코드 - 맵과 해시테이블](https://www.youtube.com/watch?v=ZBu_slSH5Sk)
