@@ -77,6 +77,62 @@ String은 `+` 연산자를 사용하여 문자열을 더했지만 StringBuilder�
 - StringBuilder : 문자열 연산이 많고, 단일쓰레드 환경에서 사용
 - StringBuffer: 문자열 연산이 많고, 멀티쓰레드 환경에서 사용
 
+## StringBuilder 구현하기
+
+```java
+package com.azurealstn.algorithm.string;
+
+class StringBuilder {
+    private char[] value; //문자열을 저장할 char[] 배열 선언
+    private int size; //배열 사이즈
+    private int index; //새로 추가될 char의 index
+
+    public StringBuilder() {
+        this.size = 1; //사이즈를 1로 초기화
+        this.value = new char[size]; //사이즈만큼 char[] 생성
+        this.index = 0; //index는 0번부터 시작
+    }
+
+    //문자열 더하기
+    public void append(String str) {
+        if (str == null) str = "null"; //null이 들어오면 null 처리
+        int len = str.length(); //문자열 길이
+        ensureCapacity(len); //배열 사이즈가 넉넉하지 않으면 배열의 크기를 늘린다.
+        for (int i = 0; i < str.length(); i++) {
+            value[index] = str.charAt(i); //반복문을 돌려서 char 배열에 문자를 하나씩 할당
+            index++; //index 증가
+        }
+    }
+
+    //배열 사이즈가 넉넉하지 않으면 배열의 크기를 늘린다.
+    public void ensureCapacity(int len) {
+        if (index + len > size) { //현재 index과 문자열의 길이의 합이 현재 배열의 size보다 크면
+            size = (size + len) * 2; //사이즈를 넉넉하게 늘린다.
+            char[] newValue = new char[size]; //넉넉하게 늘린 크기만큼 새로운 배열을 선언
+            for (int i = 0; i < value.length; i++) {
+                newValue[i] = value[i]; //기존 배열에 있는 값들 복사
+            }
+            value = newValue; //char 배열을 새로운 배열를 가리키게 한다.
+        }
+    }
+
+    //append한 모든 문자열을 붙여서 출력
+    public String toString() {
+        return new String(value, 0, index); //char 배열의 0부터 index까지 모든 char를 문자열로 변환하여 반환
+    }
+}
+public class StringTest {
+    public static void main(String[] args) {
+        StringBuilder sb = new StringBuilder();
+        sb.append("He");
+        sb.append(" is");
+        sb.append(" handsome!");
+        System.out.println(sb.toString());
+    }
+}
+```
+
 ## References
 
+- [엔지니어대한민국 - StringBuilder](https://www.youtube.com/watch?v=gc7bo5_bxdA&t=142s)
 - https://ifuwanna.tistory.com/221
