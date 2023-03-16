@@ -69,7 +69,7 @@ String은 `+` 연산자를 사용하여 문자열을 더했지만 StringBuilder�
 - StringBuilder : 동시성 문제를 야기시킬 수 있기 때문에 멀티쓰레드 환경에서는 사용하지 않는 것이 바람직하다.
 - StringBuffer : 동시성 문제를 해결하기 때문에 멀티쓰레드 환경에서 사용해도 안전하다. (Thread-safe)
 
-**그렇다면 무조건 StringBuffer를 쓰는 것이 더 좋다고 할 수 있겠지만 동시성 문제를 고려하지 않기 때문에 단일쓰레드 환경에서는 StringBuffer보다는 StringBuilder를 사용하는 것이 성능이 더 뛰어난다.**
+**그렇다면 무조건 StringBuffer를 쓰는 것이 더 좋다고 할 수 있겠지만 StringBuilder는 동시성 문제를 고려하지 않기 때문에 단일쓰레드 환경에서는 StringBuffer보다는 StringBuilder를 사용하는 것이 성능이 더 뛰어난다.**
 
 ### 정리
 
