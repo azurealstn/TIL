@@ -13,7 +13,7 @@
 - [ArrayList](./ArrayList.md)
 - [String vs StringBuilder vs StringBuffer](./String.md)
 - [QuickSort](./Quicksort.md)
-
+- [MergeSort](./MergeSort.md)
 
 ## Reference
 
